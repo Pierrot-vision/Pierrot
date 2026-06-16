@@ -47,6 +47,23 @@
 - **Flow Matching 학습/추론** — `x_prediction` / `velocity` 두 모드, 해상도 적응형 `snr_shift` 스케줄.
 - **학습 모델과 bit-exact** — 학습에 쓰인 가중치를 그대로 strict 로드, 출력이 학습 그래프와 비트 단위로 동일.
 
+## 🧬 모델 스펙
+
+| 항목 | 값 |
+|---|---|
+| 파라미터 | **0.857B** (config preset `0.8b`) |
+| 구조 | Hybrid DiT — depth **16** (앞 3 = `PIERROTDualBlock`, 나머지 13 = 비대칭 `PIERROTBlock`) |
+| hidden / heads | 1792 / 28 (head_dim 64) |
+| GQA K/V heads | 4 |
+| AdaLN embed dim | 256 |
+| 위치 인코딩 | 4D RoPE (t, h, w, l), axes_dim [16, 16, 16, 16], θ=2000 |
+| latent | 32ch, patch_size 2 (FLUX.2 VAE) |
+| 해상도 | 1024² (multi-aspect) |
+| objective / schedule | Flow Matching `x_prediction` / `snr_shift` |
+| text encoder | `Qwen/Qwen3-4B` (hidden layers 9·18·27 concat → 7680-d) |
+| VAE | `black-forest-labs/FLUX.2-small-decoder` |
+| precision | bf16 |
+
 ## 🧠 주요 알고리즘
 
 | 알고리즘 | 핵심 역할 | 비고 / 영감 |
@@ -219,7 +236,7 @@ image = pipe(prompt="a red apple on a wooden table",
 - [ ] 고해상도 finetune (1280 / 1536)
 - [ ] depth growth 스케일업 (→ 2.2B)
 - [ ] 체크포인트 공개 (Hugging Face)
-- [ ] few-step 모델 개발바 (distillation 버전)
+- [ ] few-step 모델 개발 (distillation 버전)
 - [ ] 정량 벤치마크 (GenEval / DPG-Bench 등)
 - [ ] Edit 모델 개발 
 - [ ] Next (새로운 알고리즘) 모델 개발

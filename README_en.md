@@ -47,6 +47,23 @@
 - **Flow Matching (train/infer)** — `x_prediction` / `velocity` modes, resolution-adaptive `snr_shift` schedule.
 - **Bit-exact with the training model** — loads training weights strictly; output is bit-for-bit identical to the training graph.
 
+## 🧬 Model Spec
+
+| Item | Value |
+|---|---|
+| Parameters | **0.857B** (config preset `0.8b`) |
+| Architecture | Hybrid DiT — depth **16** (first 3 = `PIERROTDualBlock`, remaining 13 = asymmetric `PIERROTBlock`) |
+| hidden / heads | 1792 / 28 (head_dim 64) |
+| GQA K/V heads | 4 |
+| AdaLN embed dim | 256 |
+| Positional encoding | 4D RoPE (t, h, w, l), axes_dim [16, 16, 16, 16], θ=2000 |
+| Latent | 32ch, patch_size 2 (FLUX.2 VAE) |
+| Resolution | 1024² (multi-aspect) |
+| Objective / schedule | Flow Matching `x_prediction` / `snr_shift` |
+| Text encoder | `Qwen/Qwen3-4B` (hidden layers 9·18·27 concat → 7680-d) |
+| VAE | `black-forest-labs/FLUX.2-small-decoder` |
+| Precision | bf16 |
+
 ## 🧠 Core Algorithms
 
 | Algorithm | Role | Notes / inspiration |
