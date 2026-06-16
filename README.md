@@ -117,10 +117,14 @@ PIERROT/
 # 1) 클론 (패키지 폴더명은 PIERROT 로)
 git clone https://github.com/Pierrot-vision/Pierrot PIERROT
 
-# 2) 의존성 설치
-pip install torch diffusers transformers safetensors einops pillow
+# 2) conda 환경 생성 + 활성화 (Python 3.12)
+conda create -n pierrot python=3.12 -y
+conda activate pierrot
 
-# 3) PIERROT 의 상위 디렉토리에서 실행 (python -m PIERROT.sample)
+# 3) 의존성 설치
+pip install -r PIERROT/requirements.txt
+
+# 4) PIERROT 의 상위 디렉토리에서 실행 (python -m PIERROT.sample)
 cd "$(dirname PIERROT)"
 ```
 

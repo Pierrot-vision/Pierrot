@@ -1,0 +1,21 @@
+# PIERROT (추론 전용) Python 의존성
+# pierrot conda env (Python 3.12) 기준 — 학습 의존성(muon / lpips / pyarrow / wandb 등) 제외.
+
+# ── Core ──────────────────────────────────────────────────────────────────────
+torch==2.11.0
+
+# ── Diffusion / model framework ───────────────────────────────────────────────
+# diffusers: FLUX.2 VAE (AutoencoderKLFlux2) 사용 위해 specific commit 고정 (정식 release 아님).
+diffusers @ git+https://github.com/huggingface/diffusers.git@0f1abc4ae8b0eb2a3b40e82a310507281144c423
+transformers==5.6.2
+huggingface_hub==1.12.0
+safetensors==0.8.0rc0
+tokenizers==0.22.2
+sentencepiece==0.2.1
+
+# ── Tensor ops / numerics ─────────────────────────────────────────────────────
+einops>=0.8.0
+numpy==2.4.4
+
+# ── Image I/O ─────────────────────────────────────────────────────────────────
+pillow==12.2.0
