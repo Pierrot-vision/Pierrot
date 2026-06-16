@@ -233,7 +233,6 @@ image = pipe(prompt="a red apple on a wooden table",
 
 - [ ] Post-Training : SFT 
 - [ ] Post-Training : DPO 같은 알고리즘 개발 
-- [ ] 고해상도 finetune (1280 / 1536)
 - [ ] depth growth 스케일업 (→ 2.2B)
 - [ ] 체크포인트 공개 (Hugging Face)
 - [ ] few-step 모델 개발 (distillation 버전)

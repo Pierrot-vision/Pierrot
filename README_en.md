@@ -231,7 +231,6 @@ See `python -m PIERROT.sample --help` for all options.
 
 - [ ] Post-Training: SFT
 - [ ] Post-Training: algorithms like DPO
-- [ ] High-resolution finetune (1280 / 1536)
 - [ ] Depth-growth scale-up (→ 2.2B)
 - [ ] Checkpoint release (Hugging Face)
 - [ ] Few-step model (distillation version)
