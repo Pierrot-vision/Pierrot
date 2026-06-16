@@ -28,6 +28,12 @@
 3. **상업 모델에 근접하는 품질** — 가능성이 확인되면, 작은 모델이더라도 **기존 상업용 모델에 근접한 품질**을 목표로 점진적으로 키워 나갑니다.
 4. **개인적 호기심의 실험장** — 무엇보다, 만드는 사람의 호기심을 푸는 공간입니다.
 
+<p align="center">
+  <img src="docs/baseprior_grid_20260616.png" width="100%" alt="PIERROT 0.8B 생성 샘플 그리드"/>
+  <br/>
+  <sub>PIERROT 0.8B · 1024² · 28 steps — 다양한 프롬프트 생성 샘플</sub>
+</p>
+
 ## ✨ 특징
 
 - **순수 PyTorch** — 학습 의존성 0. `torch` + `diffusers`(VAE) + `transformers`(text encoder) 만 있으면 동작.
@@ -208,9 +214,10 @@ image = pipe(prompt="a red apple on a wooden table",
 
 ## 🤗 출처 및 영감
 
-PIERROT 는 기존 연구들의 좋은 점들을 재현·결합하여 만들어집니다.
+- PIERROT 는 기존 연구들의 좋은 점들을 재현·결합하여 만들어집니다.
+- 저는 이 연구들에 대해 항상 감사한 마음을 가집니다.
 
-📚 **참고한 논문 전체 리스트 → [Pierrot-vision/Reading-Papers](https://github.com/Pierrot-vision/Reading-Papers)** (Thanks~)
+📚 **참고한 논문 전체(리뷰 포함) 리스트 → [Pierrot-vision/Reading-Papers](https://github.com/Pierrot-vision/Reading-Papers)** 
 
 ## 💬 잡담
 
