@@ -5,7 +5,7 @@
 <h1 align="center">🎭 PIERROT</h1>
 
 <p align="center">
-  <b>1인 이미지 생성 모델 프로젝트</b>
+  <b>1인 이미지 생성 모델 개발 프로젝트</b>
 </p>
 
 <p align="center">
