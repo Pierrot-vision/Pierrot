@@ -71,7 +71,7 @@
 | **4D RoPE** (t, h, w, l) | 메인 이미지 · 다중 참조 · 텍스트 어순을 한 좌표계로 회전 위치 인코딩 | FLUX.2 RoPE 규약 확장 |
 | **Hybrid 블록** | 앞쪽 N개 = 양방향 `PIERROTDualBlock`(MMDiT식, 텍스트도 Q 생성), 나머지 = 비대칭 `PIERROTBlock`(텍스트 KV-only) | MMDiT · PRX |
 | **Flow Matching** | 학습/추론 목적함수. `x_prediction`(x₀ 직접 예측 후 velocity 환산) / `velocity` 두 모드 | Rectified Flow |
-| **snr_shift 스케줄** | 이미지 토큰 수 기반 μ 로 timestep 을 해상도 적응형 재분배 (어려운 t≈1 구간에 step 집중) | SANA / FLUX |
+| **snr_shift 스케줄** | 이미지 토큰 수 기반 μ 로 timestep 을 해상도 적응형 재분배 (어려운 t≈1 구간에 step 집중) | SANA · FLUX |
 | **GQA** (`n_kv_heads=4`) | K/V head 공유로 attention 메모리·연산 절감 | LLaMA-2 |
 | **AdaLN-Zero** (4-param) | timestep 조건부 scale/gate 변조. shift 제거로 modulation 파라미터 절감 | DiT |
 | **Sandwich-Norm + tanh-gate + RMSNorm** | 깊은 모델 bf16 잔차 진폭 안정화 | Z-Image |
