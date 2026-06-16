@@ -49,6 +49,24 @@
 | **CFG** (classifier-free guidance) | `guidance_scale` 로 프롬프트 충실도 제어 | — |
 | **chi_prompt** (옵션) | text encoder 입력 prefix 로 프롬프트 의미 확장 | SANA (Complex Human Instruct) |
 
+## 💾 메모리 절약 기법
+
+저비용·소형을 지향하므로 모델 구조부터 학습까지 메모리를 아끼는 기법을 적극 사용합니다.
+
+| 기법 | 적용 단계 | 메모리 절약 효과 |
+|---|---|---|
+| **소형 모델 (0.857B)** | 구조 | 상업용 대비 수~수십분의 1 규모로 파라미터 자체 최소화 |
+| **GQA** (`n_kv_heads=4`) | 구조 · 학습/추론 | K/V head 28→4 공유로 attention K/V 메모리·연산 ↓ |
+| **AdaLN-Zero 4-param + `adaln_embed_dim=256`** | 구조 | shift 제거 + modulation 입력 차원 cap → modulation 파라미터 대폭 ↓ |
+| **RMSNorm** | 구조 | LayerNorm 대비 통계·연산 단순화 |
+| **patch_size 2 + 32ch latent** (FLUX.2 VAE) | 구조 | 토큰 수 ↓ → attention/activation 메모리 ↓ |
+| **SDPA** (FlashAttention / cuDNN) | 학습/추론 | O(N) 메모리 attention 커널 |
+| **bf16 mixed precision** | 학습/추론 | 절반 정밀도로 weight·activation 메모리 ↓ |
+| **TREAD 토큰 라우팅** (0.75) | 학습 | 중간 블록에 토큰 일부만 통과 → activation 메모리·step 비용 ↓ |
+| **Muon optimizer** | 학습 | 2D weight optimizer state 경량화 |
+| **precompute latent-only** | 학습 | 학습 중 VAE 미사용(latent 만 로드) → GPU 메모리·연산 ↓ |
+| **gradient accumulation** | 학습 | 작은 batch 로 큰 effective batch (peak 메모리 ↓) |
+
 ## 📦 구조
 
 ```
@@ -163,7 +181,7 @@ image = pipe(prompt="a red apple on a wooden table",
 **진행 / 예정**
 
 - [ ] Post-Training : SFT 
-- [ ] Post-Training : DPO 같은 알고리즘 개발 모델 
+- [ ] Post-Training : DPO 같은 알고리즘 개발 
 - [ ] 고해상도 finetune (1280 / 1536)
 - [ ] depth growth 스케일업 (→ 2.2B)
 - [ ] 체크포인트 공개 (Hugging Face)
