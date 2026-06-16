@@ -39,6 +39,11 @@
   <sub>PIERROT 0.8B · 1024² · 28 steps — 다양한 프롬프트 생성 샘플</sub>
 </p>
 
+## 📰 News
+
+- 2026-06-16 — base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
+- 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + Non-Commercial Research License)
+
 ## ✨ 특징
 
 - **순수 PyTorch** — 학습 의존성 0. `torch` + `diffusers`(VAE) + `transformers`(text encoder) 만 있으면 동작.
