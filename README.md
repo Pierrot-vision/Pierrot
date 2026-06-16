@@ -25,7 +25,7 @@
 
 1. **차용과 재현 우선 (MimiC)** — 새로운 알고리즘을 직접 시도하기도 하지만, 기본 방향은 기존 연구들의 검증된 장점을 골라 **재현·결합**하는 것입니다.
 2. **저비용 소형 모델 지향** — 학습 방법 · 모델 구조 · 수렴 전략 모든 단계에서 **메모리를 최소화**합니다. 적은 자원으로 가능성을 빠르게 검증하는 실험 장치입니다.
-3. **상업 모델에 근접하는 품질** — 가능성이 확인되면, 작은 모델이더라도 **기존 상업용 모델에 근접한 품질**을 목표로 점진적으로 키워 나갑니다.
+3. **상업 모델에 근접하는 품질 목표 지향** — 가능성이 확인되면, 작은 모델이더라도 **기존 상업용 모델에 근접한 품질**을 목표로 점진적으로 키워 나갑니다.
 4. **개인적 호기심의 실험장** — 무엇보다, 만드는 사람의 호기심을 푸는 공간입니다.
 
 <p align="center">
@@ -91,8 +91,8 @@
 ## 📦 구조
 
 ```
-PIERROT_INFER/
-├── sample.py              # CLI 진입점  (python -m PIERROT_INFER.sample)
+PIERROT/
+├── sample.py              # CLI 진입점  (python -m PIERROT.sample)
 ├── infer.sh               # 단일 프롬프트 추론 wrapper
 ├── docs/                  # 배너 · 샘플 이미지
 ├── results/               # 추론 출력 폴더
@@ -113,11 +113,14 @@ PIERROT_INFER/
 ## 🚀 빠른 시작
 
 ```bash
-# 1) 의존성 설치
+# 1) 클론 (패키지 폴더명은 PIERROT 로)
+git clone https://github.com/Pierrot-vision/Pierrot PIERROT
+
+# 2) 의존성 설치
 pip install torch diffusers transformers safetensors einops pillow
 
-# 2) PIERROT_INFER 를 import 가능한 위치(상위 디렉토리)에 둔다
-#    예) <study_root>/PIERROT_INFER  →  cd <study_root>
+# 3) PIERROT 의 상위 디렉토리에서 실행 (python -m PIERROT.sample)
+cd "$(dirname PIERROT)"
 ```
 
 > 텍스트 인코더(`Qwen/Qwen3-4B`)와 VAE(`black-forest-labs/FLUX.2-small-decoder`)는 첫 실행 시 Hugging Face 에서 자동 다운로드됩니다.
@@ -127,31 +130,31 @@ pip install torch diffusers transformers safetensors einops pillow
 ### CLI
 
 ```bash
-cd <study_root>          # PIERROT_INFER 의 상위 디렉토리
+cd <PIERROT 의 상위 디렉토리>
 
-CUDA_VISIBLE_DEVICES=0 python -m PIERROT_INFER.sample \
+CUDA_VISIBLE_DEVICES=0 python -m PIERROT.sample \
     --ckpt   checkpoints/0.8b_base/model.pt \
     --prompt "a red apple on a wooden table" \
-    --output PIERROT_INFER/results/apple.png \
+    --output PIERROT/results/apple.png \
     --steps 28 --seed 42
 ```
 
-또는 단일 프롬프트 wrapper (출력은 `PIERROT_INFER/results/`):
+또는 단일 프롬프트 wrapper (출력은 `PIERROT/results/`):
 
 ```bash
 # env 로 override: CKPT(필수) / PROMPT / OUTPUT / GPU / SEED / STEPS / CFG / PYTHON_BIN
 CKPT=checkpoints/0.8b_base/model.pt \
 PROMPT="a red apple on a wooden table" \
-GPU=0 bash PIERROT_INFER/infer.sh
+GPU=0 bash PIERROT/infer.sh
 ```
 
 ### Python API
 
 ```python
 import torch
-from PIERROT_INFER.model import PIERROT
-from PIERROT_INFER.model.configs import CONFIG_PRESETS
-from PIERROT_INFER.pipeline import PIERROTPipeline
+from PIERROT.model import PIERROT
+from PIERROT.model.configs import CONFIG_PRESETS
+from PIERROT.pipeline import PIERROTPipeline
 
 # 모델 빌드 + 체크포인트 로드는 sample.py 의 build_model() 참고
 model = PIERROT(CONFIG_PRESETS["0.8b"]).eval()
@@ -161,7 +164,7 @@ image = pipe(prompt="a red apple on a wooden table",
              num_inference_steps=28, guidance_scale=4.0)["images"][0]
 ```
 
-전체 옵션은 `python -m PIERROT_INFER.sample --help` 를 참고하세요.
+전체 옵션은 `python -m PIERROT.sample --help` 를 참고하세요.
 
 ## 🔧 알림
 

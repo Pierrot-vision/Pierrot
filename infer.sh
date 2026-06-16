@@ -10,8 +10,9 @@
 # 경로는 스크립트 위치 기반 자동 도출.
 set -euo pipefail
 
-INFER_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"   # = .../PIERROT_INFER
-STUDY_ROOT="$(cd "${INFER_DIR}/.." && pwd)"                 # PIERROT_INFER import 가능 위치
+INFER_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"   # 패키지 디렉토리
+PKG="$(basename "${INFER_DIR}")"                            # 패키지명 (폴더명 그대로 = PIERROT)
+STUDY_ROOT="$(cd "${INFER_DIR}/.." && pwd)"                 # 패키지 import 가능 위치
 
 CKPT="${CKPT:?CKPT 환경변수 필수 (예: CKPT=checkpoints/0.8b_base/model.pt)}"
 PROMPT="${PROMPT:-a red apple on a wooden table}"
@@ -31,7 +32,7 @@ echo "[INFO] PROMPT = ${PROMPT}"
 echo "[INFO] OUTPUT = ${OUTPUT}"
 echo "[INFO] GPU=${GPU}  SEED=${SEED}  STEPS=${STEPS}  CFG=${CFG}"
 
-CUDA_VISIBLE_DEVICES="${GPU}" "${PYTHON_BIN}" -u -m PIERROT_INFER.sample \
+CUDA_VISIBLE_DEVICES="${GPU}" "${PYTHON_BIN}" -u -m "${PKG}.sample" \
     --ckpt   "${CKPT}" \
     --prompt "${PROMPT}" \
     --output "${OUTPUT}" \

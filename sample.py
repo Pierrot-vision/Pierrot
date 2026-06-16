@@ -33,9 +33,9 @@ DEFAULT_OUTPUT = str(_PIERROT_ROOT / "results" / "pierrot.png")
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
-from PIERROT_INFER.pipeline import PIERROTPipeline                                              # noqa: E402
-from PIERROT_INFER.model import PIERROT                                                      # noqa: E402
-from PIERROT_INFER.model.configs import CONFIG_PRESETS                                       # noqa: E402
+from .pipeline import PIERROTPipeline                                              # noqa: E402
+from .model import PIERROT                                                          # noqa: E402
+from .model.configs import CONFIG_PRESETS                                           # noqa: E402
 
 
 def parse_args() -> argparse.Namespace:
@@ -244,7 +244,7 @@ def main() -> None:
             chi_prompt = [ln.rstrip("\n") for ln in f if ln.strip()]
         print(f"[INFO] chi_prompt 로드 (파일): {args.chi_prompt_file}  ({len(chi_prompt)} lines)")
     elif args.use_sana_chi_prompt:
-        from PIERROT_INFER.pipeline.constants import CHI_PROMPT_SANA_DEFAULT as _CHI_PROMPT_SANA_DEFAULT
+        from .pipeline.constants import CHI_PROMPT_SANA_DEFAULT as _CHI_PROMPT_SANA_DEFAULT
         chi_prompt = list(_CHI_PROMPT_SANA_DEFAULT)
         print(f"[INFO] chi_prompt 로드 (Sana default): {len(chi_prompt)} lines")
 
