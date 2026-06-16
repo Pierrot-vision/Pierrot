@@ -24,7 +24,7 @@
 
 ## 💡 Introduction
 
-**PIERROT** is a one-person image-generation research & development project. It is a personal testbed for exploring how far a *small* model can go without massive resources, guided by four design principles:
+**PIERROT** is a one-person **text-to-image (T2I)** generation research & development project. It is a personal testbed for exploring how far a *small* model can go without massive resources, guided by four design principles:
 
 > **Origin of the name** — Pierrot is a pantomime clown character who **mimics and imitates others**. That resonates with the project's first principle (MimiC) — reproducing and recombining the strengths of existing research — so the name was chosen.
 
