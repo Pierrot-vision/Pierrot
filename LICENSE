@@ -1,0 +1,41 @@
+PIERROT Non-Commercial Research License (v1.0)
+
+Copyright (c) 2026 Pierrot-vision
+
+Permission is hereby granted, free of charge, to any person or organization
+obtaining a copy of this software, model code, configuration, and associated
+files (the "Work"), to use, copy, modify, and distribute the Work SOLELY for
+non-commercial research, academic, educational, and personal experimentation
+purposes, subject to the following conditions:
+
+1. Non-Commercial Use Only.
+   The Work, together with any derivative works, model weights, and generated
+   outputs, may NOT be used, in whole or in part, for any commercial purpose.
+   "Commercial purpose" means any use primarily intended for or directed toward
+   commercial advantage or monetary compensation, including but not limited to
+   offering paid services, products, or APIs built on or with the Work, or
+   using the Work to develop commercial products or models.
+
+2. Attribution.
+   Redistributions and derivative works must retain this license, the above
+   copyright notice, and a clear reference to the original project
+   (https://github.com/Pierrot-vision/Pierrot).
+
+3. Share-Alike (Derivatives).
+   Any modified or derivative version of the Work that is distributed must be
+   released under this same license.
+
+4. No Warranty.
+   THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK OR THE USE OR
+   OTHER DEALINGS IN THE WORK.
+
+5. Third-Party Components.
+   The Work may depend on, integrate, or be trained with third-party datasets,
+   models, and libraries that are subject to their own separate licenses. You
+   are solely responsible for reviewing and complying with those licenses.
+
+For commercial licensing inquiries, please contact the project maintainer.
