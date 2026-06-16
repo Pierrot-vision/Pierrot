@@ -68,7 +68,7 @@
 
 | 알고리즘 | 핵심 역할 | 비고 / 영감 |
 |---|---|---|
-| **4D RoPE** (t, h, w, l) | 메인 이미지 · 다중 참조 · 텍스트 어순을 한 좌표계로 회전 위치 인코딩 | FLUX.2 RoPE 규약 확장 |
+| **4D RoPE** (t, h, w, l) | 메인 이미지 · 다중 참조 · 텍스트 어순을 한 좌표계로 회전 위치 인코딩 | FLUX.2 |
 | **Hybrid 블록** | 앞쪽 N개 = 양방향 `PIERROTDualBlock`(MMDiT식, 텍스트도 Q 생성), 나머지 = 비대칭 `PIERROTBlock`(텍스트 KV-only) | MMDiT · PRX |
 | **Flow Matching** | 학습/추론 목적함수. `x_prediction`(x₀ 직접 예측 후 velocity 환산) / `velocity` 두 모드 | Rectified Flow |
 | **snr_shift 스케줄** | 이미지 토큰 수 기반 μ 로 timestep 을 해상도 적응형 재분배 (어려운 t≈1 구간에 step 집중) | SANA · FLUX |
@@ -76,7 +76,7 @@
 | **AdaLN-Zero** (4-param) | timestep 조건부 scale/gate 변조. shift 제거로 modulation 파라미터 절감 | DiT |
 | **Sandwich-Norm + tanh-gate + RMSNorm** | 깊은 모델 bf16 잔차 진폭 안정화 | Z-Image |
 | **CFG** (classifier-free guidance) | `guidance_scale` 로 프롬프트 충실도 제어 | — |
-| **chi_prompt** (옵션) | text encoder 입력 prefix 로 프롬프트 의미 확장 | SANA (Complex Human Instruct) |
+| **chi_prompt** (옵션) | text encoder 입력 prefix 로 프롬프트 의미 확장 | SANA  |
 
 ## 💾 메모리 절약 기법
 
