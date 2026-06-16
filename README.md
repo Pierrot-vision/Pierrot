@@ -16,6 +16,10 @@
   <img src="https://img.shields.io/badge/license-Non--Commercial%20Research-orange.svg" alt="license"/>
 </p>
 
+<p align="center">
+  <b>한국어</b> | <a href="README_en.md">English</a>
+</p>
+
 ---
 
 ## 💡 소개
