@@ -71,7 +71,7 @@
 | **4D RoPE** (t, h, w, l) | Rotary positional encoding of main image · multi-ref · text order in one coordinate system | extends FLUX.2 RoPE convention |
 | **Hybrid blocks** | First N = bidirectional `PIERROTDualBlock` (MMDiT-style, text also produces Q); rest = asymmetric `PIERROTBlock` (text KV-only) | MMDiT · PRX |
 | **Flow Matching** | Train/infer objective. `x_prediction` (predict x₀ then convert to velocity) / `velocity` | Rectified Flow |
-| **snr_shift schedule** | Resolution-adaptive timestep redistribution via μ from image token count (concentrates steps near hard t≈1) | SANA / FLUX |
+| **snr_shift schedule** | Resolution-adaptive timestep redistribution via μ from image token count (concentrates steps near hard t≈1) | SANA · FLUX |
 | **GQA** (`n_kv_heads=4`) | Shared K/V heads → lower attention memory/compute | LLaMA-2 |
 | **AdaLN-Zero** (4-param) | Timestep-conditioned scale/gate modulation; shift removed to cut modulation params | DiT |
 | **Sandwich-Norm + tanh-gate + RMSNorm** | Stabilizes bf16 residual magnitude in deep models | Z-Image |
