@@ -197,7 +197,7 @@ See `python -m PIERROT.sample --help` for all options.
 - This package is inference code from the (currently private) PIERROT_LAB experiments.
 - There is currently no plan to release the training code. (under consideration)
 - As a one-person project, budget constraints mean progress may be slow.
-- **All inquiries — participation · advice · hiring — are always welcome → [mail](mailto:peternara@naver.com)**
+- **All inquiries — participation · advice · hiring — are always welcome.**
 - **Support such as GPUs is always, gratefully welcomed. :)**
 
 ## 📚 Training Datasets
