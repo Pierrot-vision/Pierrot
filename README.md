@@ -68,6 +68,20 @@
 | **precompute latent-only** | 학습 | 학습 중 VAE 미사용(latent 만 로드) → GPU 메모리·연산 ↓ |
 | **gradient accumulation** | 학습 | 작은 batch 로 큰 effective batch (peak 메모리 ↓) |
 
+## ⚡ 학습 수렴 가속
+
+적은 예산으로 빠르게 수렴시키기 위해, 표현 정렬 · perceptual loss · optimizer 등을 함께 사용합니다. (PRX Part 3 24h 레시피 계열)
+
+| 기법 | 역할 | 비고 / 영감 |
+|---|---|---|
+| **REPA** (DINOv3 표현 정렬) | 트랜스포머 hidden state 를 사전학습 비전 인코더(DINOv3) 표현에 정렬 → 의미 표현 학습 가속 | 초반 burn-in 집중 후 제거 (REPA) |
+| **LPIPS** | 디코드 이미지에 perceptual loss → 픽셀·질감 수렴 가속 | LPIPS |
+| **Perceptual-DINO** | DINO feature 기반 semantic perceptual loss | — |
+| **x_prediction** | x₀ 직접 예측 출력 계약 → LPIPS / P-DINO 같은 픽셀공간 loss 적용 가능 | — |
+| **Muon optimizer** | 2D weight 직교화 업데이트로 step 당 수렴 가속 | Muon |
+| **EMA** | 가중치 지수이동평균 → 안정화 + 일반화 향상 | — |
+| **TREAD 토큰 라우팅** | 중간 블록 토큰 일부만 통과 → 학습 wall-clock ~50% 단축 | TREAD |
+
 ## 📦 구조
 
 ```
