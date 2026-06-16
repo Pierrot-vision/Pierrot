@@ -239,7 +239,7 @@ See `python -m PIERROT.sample --help` for all options.
 - [ ] Next (new-algorithm) model
 - [ ] Add LoRA models
 
-## 🤗 Credits & Inspiration
+## 🤗 Reference
 
 - PIERROT is built by reproducing and recombining the strengths of existing research.
 - I am always grateful to these works.

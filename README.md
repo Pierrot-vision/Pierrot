@@ -241,7 +241,7 @@ image = pipe(prompt="a red apple on a wooden table",
 - [ ] Next (새로운 알고리즘) 모델 개발
 - [ ] LoRA 모델 추가
 
-## 🤗 출처 및 영감
+## 🤗 Reference
 
 - PIERROT 는 기존 연구들의 좋은 점들을 재현·결합하여 만들어집니다.
 - 저는 이 연구들에 대해 항상 감사한 마음을 가집니다.
