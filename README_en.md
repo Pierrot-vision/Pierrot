@@ -240,18 +240,6 @@ This project is under the **PIERROT Non-Commercial Research License (v1.0)** —
 - External datasets · models · libraries used in training are subject to **their own licenses**
 - For commercial licensing, please contact the maintainer
 
-## 💬 Notes (casual)
-
-I've worked in Deep Learning for a long time, but I only started seriously working with Diffusion about 1.5 years ago. Until then I mostly kept doing LoRA-based domain-specific training — honestly it got a bit tedious, while a stream of fast-changing, interesting research kept appearing.
-
-The US and especially Chinese companies keep releasing solid models, which made me wonder "why don't Korean companies try this more?" Going further, I got curious whether "from-scratch training is really that hard," and above all — I wanted to train one from scratch myself.
-
-There were many constraints. Work was busy, and I had to carve out personal time. The biggest wall was cost — having to personally cover an expensive server was my greatest worry. Still, I started this project with a "let's just try it" attitude.
-
-It's still ongoing, but my conclusion so far is this: **given the right GPU and dataset environment** (I know well that this is no easy condition), even if not the best, I've become convinced that one can build a small yet practical, high-performance model like the **[FLUX.2 Klein 4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B)** I'm so fond of.
-
-I'm a sensitive person :) so please cheer me on with kind words rather than harsh ones.
-
 ## 📮 Contact
 
 - Please reach out with questions/inquiries via [mail](mailto:peternara@naver.com) or [GitHub Issue](https://github.com/Pierrot-vision/Pierrot/issues).
