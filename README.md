@@ -93,7 +93,7 @@
 ```
 PIERROT_INFER/
 ├── sample.py              # CLI 진입점  (python -m PIERROT_INFER.sample)
-├── infer.sh               # 다중 프롬프트 일괄 추론 wrapper
+├── infer.sh               # 단일 프롬프트 추론 wrapper
 ├── docs/                  # 배너 · 샘플 이미지
 ├── results/               # 추론 출력 폴더
 ├── model/                 # PIERROT 트랜스포머 본체
@@ -136,12 +136,13 @@ CUDA_VISIBLE_DEVICES=0 python -m PIERROT_INFER.sample \
     --steps 28 --seed 42
 ```
 
-다중 프롬프트 일괄 추론(출력은 `PIERROT_INFER/results/`):
+또는 단일 프롬프트 wrapper (출력은 `PIERROT_INFER/results/`):
 
 ```bash
-# 경로는 스크립트 위치 기반 자동 도출. 필요 시 env 로 override:
-#   PIERROT_ROOT / CKPT_PATH / OUT_DIR / PYTHON_BIN
-CKPT_STEP=02370000 GPU=0 bash PIERROT_INFER/infer.sh
+# env 로 override: CKPT(필수) / PROMPT / OUTPUT / GPU / SEED / STEPS / CFG / PYTHON_BIN
+CKPT=checkpoints/0.8b_base/model.pt \
+PROMPT="a red apple on a wooden table" \
+GPU=0 bash PIERROT_INFER/infer.sh
 ```
 
 ### Python API
