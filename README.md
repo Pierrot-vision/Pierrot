@@ -162,8 +162,9 @@ cd "$(dirname PIERROT)"
 |---|---|---|---|---|
 | **base 0.8b (1차)** | 추론용 | `model_base.zip` → `model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
-> 압축을 풀어 나온 `model.pt` 를 `--ckpt` 에 지정하면 됩니다.
-> Fine-tuning 까지 가능한 체크포인트도 모두 공개하고 싶지만, 현재 Google Drive 용량 부족으로 보류 중입니다 (대체 저장소 마련 중).
+> 압축을 풀어 나온 `model.pt` 를 `--ckpt` 에 지정하면 됩니다 (CLI 예시는 아래 참고).
+> Fine-tuning 용 체크포인트 (optimizer / scheduler / EMA 포함) 도 공개 예정이지만, 현재 Google Drive 용량 부족으로 보류 중입니다 (대체 저장소 마련 중).
+> 모델은 최신 버전으로 수시 업데이트될 수 있습니다.
 
 ## 🎨 추론
 
