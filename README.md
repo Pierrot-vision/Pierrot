@@ -176,7 +176,7 @@ image = pipe(prompt="a red apple on a wooden table",
 - 이 패키지는 현재 공개하지 않는 PIERROT_LAB에서 실험한 추론 코드입니다.
 - 현재 학습 코드 공개할 계획을 가지고 있지 않습니다. (향후 고민)
 - 1인 프로젝트라 비용에 대한 문제가 존재하여 진행속도가 느릴수 있습니다.
-- **참여·조언·채용 등 관련 모든 문의는 언제나 환영입니다 → [peternara@naver.com](mailto:peternara@naver.com)**
+- **참여·조언·채용 등 관련 모든 문의는 언제나 환영입니다 → [메일](mailto:peternara@naver.com)**
 - **관련 GPU등의 지원은 언제나·항상 정중히 감사하게 기다리고 있습니다.:)**  
 
 ## 📚 학습 데이터셋
@@ -248,7 +248,9 @@ image = pipe(prompt="a red apple on a wooden table",
 
 아직 진행 중이지만, 지금까지의 결론은 이렇습니다. **GPU 와 학습셋 환경만 갖춰진다면** (이게 결코 쉬운 조건이 아니라는 건 잘 압니다), 최고는 아니더라도 — 제가 참 좋아하는 — **[FLUX.2 Klein 4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B)** 처럼 작으면서도 실용적인 고성능 모델을 충분히 만들 수 있겠다는 확신이 생겼습니다.
 
+조심한 성격:)이니 나쁜말보단 좋은 말로 응원 부탁드립니다.
+
 ## 📮 문의
 
-- 메일 [peternara@naver.com](mailto:peternara@naver.com) 또는 [GitHub Issue](https://github.com/Pierrot-vision/Pierrot/issues) 를 통해 관련 질문·문의 부탁드립니다.
+- [메일](mailto:peternara@naver.com) 또는 [GitHub Issue](https://github.com/Pierrot-vision/Pierrot/issues) 를 통해 관련 질문·문의 부탁드립니다.
 - 참고로, 이미 GitHub(README · 코드 · 문서)에 있는 내용을 다시 문의하시면 답을 드리지 못할 수 있는 점 양해 부탁드립니다.
