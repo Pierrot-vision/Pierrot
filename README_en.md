@@ -5,7 +5,7 @@
 <h1 align="center">🎭 PIERROT</h1>
 
 <p align="center">
-  <b>A solo experimental image-generation model project</b>
+  <b>A solo image-generation model development project</b>
 </p>
 
 <p align="center">
