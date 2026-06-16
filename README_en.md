@@ -39,6 +39,11 @@
   <sub>PIERROT 0.8B · 1024² · 28 steps — samples from diverse prompts</sub>
 </p>
 
+## 📰 News
+
+- **2026-06-16** — Released the `base 0.8b (v1)` inference checkpoint ([download ↓](#-checkpoints))
+- **2026-06-16** — Released the PIERROT inference-only package (code + deps + docs + Non-Commercial Research License)
+
 ## ✨ Features
 
 - **Pure PyTorch** — zero training dependencies. Runs with just `torch` + `diffusers` (VAE) + `transformers` (text encoder).
@@ -153,12 +158,13 @@ cd "$(dirname PIERROT)"
 
 ## 📥 Checkpoints
 
-| Model | Type | File | Updated | Download |
-|---|---|---|---|---|
-| **base 0.8b (v1)** | inference | `model_base.zip` → `model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+| Model | Type | File | Unpack to (recommended) | Updated | Download |
+|---|---|---|---|---|---|
+| **base 0.8b (v1)** | inference (model_only) | `model_base.zip` → `model.pt` | `checkpoints/0.8b_base/model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
-> Unzip and pass the resulting `model.pt` to `--ckpt`.
-> I'd also like to release fine-tunable checkpoints, but they're on hold due to limited Google Drive storage (working on an alternative).
+> Unzip and pass the resulting `model.pt` to `--ckpt` (see the CLI example below).
+> Fine-tuning checkpoints (with optimizer / scheduler / EMA) will be released too, but are on hold due to limited Google Drive storage (working on an alternative).
+> The model may be updated to newer versions from time to time.
 
 ## 🎨 Inference
 
