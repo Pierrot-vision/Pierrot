@@ -153,11 +153,12 @@ cd "$(dirname PIERROT)"
 
 ## 📥 체크포인트
 
-| 모델 | 종류 | 파일 | 다운로드 |
-|---|---|---|---|
-| **base 0.8b (1차)** | 추론용 (EMA) | `model_base.zip` → `model.pt` | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+| 모델 | 종류 | 파일 | 업데이트 | 다운로드 |
+|---|---|---|---|---|
+| **base 0.8b (1차)** | 추론용 | `model_base.zip` → `model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
-> 압축을 풀어 나온 `model.pt` 를 `--ckpt` 에 지정하면 됩니다. (추론엔 EMA 가중치만 필요)
+> 압축을 풀어 나온 `model.pt` 를 `--ckpt` 에 지정하면 됩니다.
+> Fine-tuning 까지 가능한 체크포인트도 모두 공개하고 싶지만, 현재 Google Drive 용량 부족으로 보류 중입니다 (대체 저장소 마련 중).
 
 ## 🎨 추론
 

@@ -153,11 +153,12 @@ cd "$(dirname PIERROT)"
 
 ## 📥 Checkpoints
 
-| Model | Type | File | Download |
-|---|---|---|---|
-| **base 0.8b (v1)** | inference (EMA) | `model_base.zip` → `model.pt` | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+| Model | Type | File | Updated | Download |
+|---|---|---|---|---|
+| **base 0.8b (v1)** | inference | `model_base.zip` → `model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
-> Unzip and pass the resulting `model.pt` to `--ckpt`. (inference needs only the EMA weights)
+> Unzip and pass the resulting `model.pt` to `--ckpt`.
+> I'd also like to release fine-tunable checkpoints, but they're on hold due to limited Google Drive storage (working on an alternative).
 
 ## 🎨 Inference
 
