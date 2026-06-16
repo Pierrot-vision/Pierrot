@@ -70,7 +70,7 @@
 
 ## ⚡ 학습 수렴 가속
 
-적은 예산으로 빠르게 수렴시키기 위해, 표현 정렬 · perceptual loss · optimizer 등을 함께 사용합니다. (PRX Part 3 24h 레시피 계열)
+적은 예산으로 빠르게 수렴시키기 위해, 표현 정렬 · perceptual loss · optimizer 등을 함께 사용합니다.
 
 | 기법 | 역할 | 비고 / 영감 |
 |---|---|---|
@@ -161,8 +161,8 @@ image = pipe(prompt="a red apple on a wooden table",
 - 이 패키지는 현재 공개하지 않는 PIERROT_LAB에서 학습한 추론 코드입니다.
 - 현재 학습셋은 공개할 계획을 가지고 있지 않습니다. (향후 고민)
 - 1인 프로젝트라 비용에 대한 문제가 존재하여 진행속도가 느릴수 있습니다.
-- 참여·조언·채용등의 문의는 언제나 환영입니다.
-- 관련 GPU등의 지원은 언제나 기다리고 있습니다. :) 
+- **참여·조언·채용등의 문의는 언제나 환영입니다.**
+- **관련 GPU등의 지원은 언제나·항상 기다리고 있습니다.:)**  
 
 ## 📚 학습 데이터셋
 
@@ -204,12 +204,13 @@ image = pipe(prompt="a red apple on a wooden table",
 - [ ] 정량 벤치마크 (GenEval / DPG-Bench 등)
 - [ ] Edit 모델 개발 
 - [ ] Next (새로운 알고리즘) 모델 개발
+- [ ] LoRA 모델 추가
 
 ## 🤗 출처 및 영감
 
 PIERROT 는 기존 연구들의 좋은 점들을 재현·결합하여 만들어집니다.
 
-📚 **참고한 논문 전체 리스트 → [Pierrot-vision/Reading-Papers](https://github.com/Pierrot-vision/Reading-Papers)**
+📚 **참고한 논문 전체 리스트 → [Pierrot-vision/Reading-Papers](https://github.com/Pierrot-vision/Reading-Papers)** (Thanks~)
 
 ## 💬 잡담
 
