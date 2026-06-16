@@ -111,7 +111,7 @@ PIERROT/
     └── constants.py           # chi_prompt 기본 템플릿
 ```
 
-## 🚀 빠른 시작
+## 🚀 Install
 
 ```bash
 # 1) 클론 (패키지 폴더명은 PIERROT 로)
@@ -247,3 +247,8 @@ image = pipe(prompt="a red apple on a wooden table",
 제약은 많았습니다. 회사 일도 바빴고, 개인 시간을 따로 쪼개야 했습니다. 가장 큰 벽은 역시 비용이었습니다. 고비용의 서버를 개인이 감당해야 한다는 점이 제일 큰 고민이었죠. 그래도 "일단 해보자" 하고 시작한 프로젝트입니다.
 
 아직 진행 중이지만, 지금까지의 결론은 이렇습니다. **GPU 와 학습셋 환경만 갖춰진다면** (이게 결코 쉬운 조건이 아니라는 건 잘 압니다), 최고는 아니더라도 — 제가 참 좋아하는 — **[FLUX.2 Klein 4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B)** 처럼 작으면서도 실용적인 고성능 모델을 충분히 만들 수 있겠다는 확신이 생겼습니다.
+
+## 📮 문의
+
+- 메일 [peternara@naver.com](mailto:peternara@naver.com) 또는 [GitHub Issue](https://github.com/Pierrot-vision/Pierrot/issues) 를 통해 관련 질문·문의 부탁드립니다.
+- 참고로, 이미 GitHub(README · 코드 · 문서)에 있는 내용을 다시 문의하시면 답을 드리지 못할 수 있는 점 양해 부탁드립니다.
