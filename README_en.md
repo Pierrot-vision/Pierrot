@@ -52,7 +52,7 @@
 | Item | Value |
 |---|---|
 | Parameters | **0.857B** (config preset `0.8b`) |
-| Architecture | Hybrid DiT — depth **16** (first 3 = `PIERROTDualBlock`, remaining 13 = asymmetric `PIERROTBlock`) |
+| Architecture | Hybrid DiT — depth **16** |
 | hidden / heads | 1792 / 28 (head_dim 64) |
 | GQA K/V heads | 4 |
 | AdaLN embed dim | 256 |

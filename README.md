@@ -52,7 +52,7 @@
 | 항목 | 값 |
 |---|---|
 | 파라미터 | **0.857B** (config preset `0.8b`) |
-| 구조 | Hybrid DiT — depth **16** (앞 3 = `PIERROTDualBlock`, 나머지 13 = 비대칭 `PIERROTBlock`) |
+| 구조 | Hybrid DiT — depth **16** |
 | hidden / heads | 1792 / 28 (head_dim 64) |
 | GQA K/V heads | 4 |
 | AdaLN embed dim | 256 |
