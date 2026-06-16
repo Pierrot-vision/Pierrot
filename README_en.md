@@ -155,9 +155,9 @@ cd "$(dirname PIERROT)"
 
 | Model | Type | File | Download |
 |---|---|---|---|
-| **base 0.8b (v1)** | inference (EMA) | `model_base.zip` → `ema.pt` | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+| **base 0.8b (v1)** | inference (EMA) | `model_base.zip` → `model.pt` | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
-> Unzip and pass the resulting `ema.pt` to `--ckpt`. (inference needs only the EMA weights)
+> Unzip and pass the resulting `model.pt` to `--ckpt`. (inference needs only the EMA weights)
 
 ## 🎨 Inference
 
