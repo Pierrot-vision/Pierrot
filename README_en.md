@@ -151,6 +151,14 @@ cd "$(dirname PIERROT)"
 
 > The text encoder (`Qwen/Qwen3-4B`) and VAE (`black-forest-labs/FLUX.2-small-decoder`) are auto-downloaded from Hugging Face on first run.
 
+## 📥 Checkpoints
+
+| Model | Type | File | Download |
+|---|---|---|---|
+| **base 0.8b (v1)** | inference (EMA) | `model_base.zip` → `ema.pt` | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+
+> Unzip and pass the resulting `ema.pt` to `--ckpt`. (inference needs only the EMA weights)
+
 ## 🎨 Inference
 
 ### CLI

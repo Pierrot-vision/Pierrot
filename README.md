@@ -151,6 +151,14 @@ cd "$(dirname PIERROT)"
 
 > 텍스트 인코더(`Qwen/Qwen3-4B`)와 VAE(`black-forest-labs/FLUX.2-small-decoder`)는 첫 실행 시 Hugging Face 에서 자동 다운로드됩니다.
 
+## 📥 체크포인트
+
+| 모델 | 종류 | 파일 | 다운로드 |
+|---|---|---|---|
+| **base 0.8b (1차)** | 추론용 (EMA) | `model_base.zip` → `ema.pt` | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+
+> 압축을 풀어 나온 `ema.pt` 를 `--ckpt` 에 지정하면 됩니다. (추론엔 EMA 가중치만 필요)
+
 ## 🎨 추론
 
 ### CLI
