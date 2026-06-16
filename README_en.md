@@ -203,6 +203,7 @@ See `python -m PIERROT.sample --help` for all options.
 
 ## 🔧 Notes
 
+- The released model does **not** reach commercial-grade quality. If you need that level, please use a public model from a larger company. What it can generate largely depends on the **public training sets** listed below.
 - This package is inference code from the (currently private) PIERROT_LAB experiments.
 - There is currently no plan to release the training code. (under consideration)
 - As a one-person project, budget constraints mean progress may be slow.
