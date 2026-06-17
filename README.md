@@ -41,7 +41,7 @@
 
 ## 📰 News
 
-- 2026-06-16 — beta-v2370000:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
+- 2026-06-16 — beta-v2370:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
 - 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + Non-Commercial Research License)
 
 ## ✨ 특징
@@ -160,7 +160,7 @@ cd "$(dirname PIERROT)"
 
 | 모델 | 종류 | 파일 | 권장 해제 위치 | 업데이트 | 다운로드 |
 |---|---|---|---|---|---|
-| **beta-v2370000 base 0.8b (1차)** | 추론용 (model_only) | `model_base.zip` → `model.pt` | `checkpoints/0.8b_base/model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+| **beta-v2370 base 0.8b (1차)** | 추론용 (model_only) | `model_base.zip` → `model.pt` | `checkpoints/0.8b_base/model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
 > 압축을 풀어 나온 `model.pt` 를 `--ckpt` 에 지정하면 됩니다 (CLI 예시는 아래 참고).
 > Fine-tuning 용 체크포인트 (optimizer / scheduler / EMA 포함) 도 공개 예정이지만, 현재 Google Drive 용량 부족으로 보류 중입니다 (대체 저장소 마련 중).
