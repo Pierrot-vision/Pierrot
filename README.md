@@ -273,7 +273,7 @@ image = pipe(prompt="a red apple on a wooden table",
 - ❌ **상업적 사용 금지** — 유료 서비스 · 제품 · API · 상업 모델 개발 등 (모델 가중치 · 생성 결과물 포함)
 - 재배포 · 파생물은 **동일 라이센스 유지 + 출처 표기** ([Pierrot-vision/Pierrot](https://github.com/Pierrot-vision/Pierrot))
 - 학습에 사용된 외부 데이터셋 · 모델 · 라이브러리는 **각자의 라이센스**를 따릅니다
-- 상업적 이용 문의는 메인테이너에게 연락해 주세요
+- 상업적 이용 문의는 nmaintainer에게 연락해 주세요
 
 ## 💬 잡담
 

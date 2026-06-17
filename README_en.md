@@ -42,8 +42,8 @@
 
 ## 📰 News
 
-- **2026-06-16** — Released the `base 0.8b (v1)` inference checkpoint ([download ↓](#-checkpoints))
-- **2026-06-16** — Released the PIERROT inference-only package (code + deps + docs + Non-Commercial Research License)
+- 2026-06-16 — `beta-v2370` base 0.8b (v1) inference checkpoint released ([download ↓](#-checkpoints))
+- 2026-06-16 — PIERROT inference-only package released (code + deps + docs + Non-Commercial Research License)
 
 ## ✨ Features
 
@@ -161,7 +161,7 @@ cd "$(dirname PIERROT)"
 
 | Model | Type | File | Unpack to (recommended) | Updated | Download |
 |---|---|---|---|---|---|
-| **base 0.8b (v1)** | inference (model_only) | `model_base.zip` → `model.pt` | `checkpoints/0.8b_base/model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+| **beta-v2370 base 0.8b (v1)** | inference (model_only) | `model_base.zip` → `model.pt` | `checkpoints/0.8b_base/model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
 > Unzip and pass the resulting `model.pt` to `--ckpt` (see the CLI example below).
 > Fine-tuning checkpoints (with optimizer / scheduler / EMA) will be released too, but are on hold due to limited Google Drive storage (working on an alternative).
