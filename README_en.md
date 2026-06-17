@@ -24,7 +24,7 @@
 
 ## 💡 Introduction
 
-**PIERROT** is a solo **text-to-image (T2I)** generation research & development project. It is a personal testbed for exploring how far a *small* model can go without massive resources, guided by four design principles:
+**PIERROT** is a solo **text-to-image (T2I)** generation research & development project. It is a personal testbed for exploring how far a *small* model can go without massive resources, guided by five design principles:
 
 > **Origin of the name** — Pierrot is a pantomime clown character who **mimics and imitates others**. That resonates with the project's first principle (MimiC) — reproducing and recombining the strengths of existing research — so the name was chosen.
 
@@ -32,6 +32,7 @@
 2. **Low-cost, small-model oriented** — **Minimize memory** at every stage (training method, model structure, convergence strategy). A device for quickly validating feasibility with limited resources.
 3. **Aiming for near-commercial quality** — Once feasibility is confirmed, gradually scale up toward **quality close to commercial models**, even with a small model.
 4. **A playground for personal curiosity** — Above all, a space to satisfy the maker's curiosity.
+5. **Open-source oriented** — this project is open-source by default.
 
 <p align="center">
   <img src="docs/baseprior_grid_20260616.png" width="100%" alt="PIERROT 0.8B sample grid"/>
