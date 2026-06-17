@@ -34,6 +34,8 @@
 4. **A playground for personal curiosity** — Above all, a space to satisfy the maker's curiosity.
 5. **Open-source oriented** — this project is open-source by default.
 
+As the sample grid below shows, the quality is quite decent **for a 0.8B-scale model**.
+
 <p align="center">
   <img src="docs/baseprior_grid_20260616.png" width="100%" alt="PIERROT 0.8B sample grid"/>
   <br/>
