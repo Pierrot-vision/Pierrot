@@ -1,4 +1,4 @@
-"""PIERROT model layers — 가독성 우선.
+"""PIERROT model layers 
 
 구성:
     - 4D RoPE (t, h, w, l)  + EmbedND + apply_rope
@@ -104,6 +104,7 @@ def timestep_embedding(t: Tensor, dim: int, max_period: int = 10000, time_factor
     """
     t    = time_factor * t                                                                            # (B,)
     half = dim // 2
+    
     # NOTE: float32 사용 (Apple MPS / 일부 NPU 가 float64 미지원).
     freqs = torch.exp(-math.log(max_period) * torch.arange(half, dtype=torch.float32) / half).to(t.device)  # (dim/2,)
 
@@ -146,10 +147,10 @@ class EmbedND(nn.Module):
     def rope(self, pos: Tensor, dim: int, theta: int) -> Tensor:
         """1D RoPE 한 축 (cache 미사용 경로).
 
-        입력  pos   : (B, N)                  이 축의 정수 좌표
+        입력   pos   : (B, N)                  이 축의 정수 좌표
               dim   : int                     이 축에 할당된 채널 수 (짝수)
               theta : int                     주파수 base
-        출력        : (B, N, dim/2, 2, 2)      토큰·채널별 2x2 회전 행렬
+        출력         : (B, N, dim/2, 2, 2)      토큰·채널별 2x2 회전 행렬
         """
         assert dim % 2 == 0
 

@@ -105,6 +105,8 @@
 | **precompute latent-only** | 학습 | 학습 중 VAE 미사용(latent 만 로드) → GPU 메모리·연산 ↓ |
 | **gradient accumulation** | 학습 | 작은 batch 로 큰 effective batch (peak 메모리 ↓) |
 
+> 특히 **GQA(`n_kv_heads=4`) + adaLN cap(`adaln_embed_dim=256`)** 두 기법만으로, 같은 아키텍처(hidden 1792 · depth 16 · 28 head)의 raw MHA **1.46B → 0.857B (약 41% 절감)** 입니다 (configs.py 명시). 즉 0.857B 는 "효율화된 1.46B 급" 모델입니다.
+
 ## ⚡ 학습 수렴 가속
 
 적은 예산으로 빠르게 수렴시키기 위해, 표현 정렬 · perceptual loss · optimizer 등을 함께 사용합니다.

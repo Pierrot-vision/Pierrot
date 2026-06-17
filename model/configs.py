@@ -22,7 +22,7 @@ CONFIG_PRESETS: dict[str, dict] = {
     # 스모크 테스트용
     "tiny":  {**_PIERROT_BASE, "hidden_size":  256, "num_heads":  4, "depth":  2, "axes_dim": [16, 16, 16, 16]},
 
-    # 표준 학습 (FLUX.2 VAE 기준) — 24h 옵션 기준 0.857B (raw MHA 1.46B)
+    # 표준 학습 (FLUX.2 VAE 기준) — 0.857B (raw MHA 1.46B)
     "0.8b": {
         **_PIERROT_BASE,
         "hidden_size":      1792,
@@ -32,7 +32,7 @@ CONFIG_PRESETS: dict[str, dict] = {
         "axes_dim":         [16, 16, 16, 16],  # 4축 (t, h, w, l) 채널 분배
     },
 
-    # 깊이 성장 1단계 (0.8b 가중치 승계) — 너비 고정, depth 만 ↑.   24h 옵션 기준 1.618B
+    # 깊이 성장 1단계 (0.8b 가중치 승계) — 너비 고정, depth 만 ↑.   1.618B
     "1.6b": {
         **_PIERROT_BASE,
         "hidden_size":      1792,              # 0.8b 와 동일 (가중치 shape 호환 필수)

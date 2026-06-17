@@ -105,6 +105,8 @@ Being low-cost and small-oriented, memory-saving techniques are used aggressivel
 | **precompute latent-only** | train | no VAE during training (load latents only) → lower GPU memory/compute |
 | **gradient accumulation** | train | large effective batch from small batch (lower peak memory) |
 
+> In particular, **GQA (`n_kv_heads=4`) + adaLN cap (`adaln_embed_dim=256`)** alone shrink the same architecture (hidden 1792 · depth 16 · 28 heads) from raw MHA **1.46B → 0.857B (~41% smaller)** (noted in configs.py). In other words, the 0.857B model is an "efficiency-optimized 1.46B-class" model.
+
 ## ⚡ Convergence Acceleration
 
 To converge fast on a small budget, representation alignment · perceptual losses · optimizers are combined.
