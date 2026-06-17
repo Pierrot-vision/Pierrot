@@ -244,18 +244,18 @@ image = pipe(prompt="a red apple on a wooden table",
 - [x] 공개 데이터셋 기반 base 사전학습
 - [x] 추론 전용 패키지 분리 — 학습 의존성 0
 - [x] CLI / Python API 추론 파이프라인
-- [x] 다중 참조(multi-reference) 입력 지원 -> 코드만 완료
+- [x] 다중 참조(multi-reference) 입력 지원 → 코드만 완료
+- [x] 체크포인트 공개
 
 **진행 / 예정**
 
-- [ ] Post-Training : SFT 
+- [ ] Post-Training : SFT → 코드만 완료 → 리소스 부족으로 실행 무
 - [ ] Post-Training : DPO 같은 알고리즘 개발 
-- [ ] depth growth 스케일업 (→ 2.2B)
-- [ ] 체크포인트 공개 (Hugging Face)
+- [ ] depth growth 스케일업 (→ 2.2B) → 현재 테스트 진행중
 - [ ] few-step 모델 개발 (distillation 버전)
 - [ ] 정량 벤치마크 (GenEval / DPG-Bench 등)
-- [ ] Edit 모델 개발 
-- [ ] Next (새로운 알고리즘) 모델 개발
+- [ ] Edit 모델 개발 → Domain-Speicific 영역에서 계획중 
+- [ ] Next (새로운 알고리즘) 모델 개발 → 코드만 완료 → 리소스 부족으로 실행 무
 - [ ] LoRA 모델 추가
 
 ## 🤗 Reference
