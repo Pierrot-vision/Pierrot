@@ -41,7 +41,7 @@
 
 ## 📰 News
 
-- 2026-06-16 — base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
+- 2026-06-16 — beta-v2370000:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
 - 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + Non-Commercial Research License)
 
 ## ✨ 특징
@@ -160,7 +160,7 @@ cd "$(dirname PIERROT)"
 
 | 모델 | 종류 | 파일 | 권장 해제 위치 | 업데이트 | 다운로드 |
 |---|---|---|---|---|---|
-| **base 0.8b (1차)** | 추론용 (model_only) | `model_base.zip` → `model.pt` | `checkpoints/0.8b_base/model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
+| **beta-v2370000 base 0.8b (1차)** | 추론용 (model_only) | `model_base.zip` → `model.pt` | `checkpoints/0.8b_base/model.pt` | 2026-06-16 | [Google Drive](https://drive.google.com/file/d/1HX5zMDnRStYWHlU4WyROoU4vCY8L51MA/view?usp=sharing) |
 
 > 압축을 풀어 나온 `model.pt` 를 `--ckpt` 에 지정하면 됩니다 (CLI 예시는 아래 참고).
 > Fine-tuning 용 체크포인트 (optimizer / scheduler / EMA 포함) 도 공개 예정이지만, 현재 Google Drive 용량 부족으로 보류 중입니다 (대체 저장소 마련 중).
@@ -280,7 +280,7 @@ image = pipe(prompt="a red apple on a wooden table",
 
 제약은 많았습니다 — 바쁜 회사 일, 따로 내야 하는 개인 시간, 그리고 가장 큰 벽인 비용(고비용 서버를 개인이 감당). 그래도 막연히 논문만 보고 있기보다, 직접 실행해 부딪혀 보자는 생각으로 시작한 프로젝트입니다.
 
-아직 진행 중이지만, 지금까지의 결론은 — **GPU 와 학습셋만 갖춰진다면**(쉬운 조건은 아니지만) 제가 좋아하는 **[FLUX.2 Klein 4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B)** 같은 작고 실용적인 고성능 모델도 충분히 가능하겠다는 확신이 들었다는 것입니다.
+아직 진행 중이지만, 지금까지의 결론은 — **GPU 와 학습셋만 갖춰진다면**(쉬운 조건은 아니지만) 제가 좋아하는 **[FLUX.2 Klein 4B](https://huggingface.co/black-forest-labs/FLUX.2-klein-4B)** 같은 작고 실용적인 고성능 모델도 충분히 가능하겠다는 생각·확신이 조금 들었습니다.
 
 소심한 성격:)이니 나쁜말보단 좋은 말로 응원 부탁드립니다.
 
