@@ -85,6 +85,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 | **Sandwich-Norm + tanh-gate + RMSNorm** | Stabilizes bf16 residual magnitude in deep models | Z-Image |
 | **CFG** (classifier-free guidance) | Controls prompt fidelity via `guidance_scale` | — |
 | **chi_prompt** (optional) | Text-encoder input prefix to expand prompt meaning | SANA (Complex Human Instruct) |
+| **Quote char-level tokenization** | Char-level tokenization of quoted (`"..."`) text → better scene-text spelling accuracy | LongCat |
 
 ## 💾 Memory-Saving Techniques
 

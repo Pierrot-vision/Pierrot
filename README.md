@@ -85,6 +85,7 @@
 | **Sandwich-Norm + tanh-gate + RMSNorm** | 깊은 모델 bf16 잔차 진폭 안정화 | Z-Image |
 | **CFG** (classifier-free guidance) | `guidance_scale` 로 프롬프트 충실도 제어 | — |
 | **chi_prompt** (옵션) | text encoder 입력 prefix 로 프롬프트 의미 확장 | SANA  |
+| **Quote char-level 토크나이징** | 따옴표(`"..."`) 안 텍스트를 글자 단위로 토큰화 → scene-text 철자 정확도 ↑ | LongCat |
 
 ## 💾 메모리 절약 기법
 
