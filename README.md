@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg" alt="pytorch"/>
   <img src="https://img.shields.io/badge/model-0.857B-success.svg" alt="params"/>
   <img src="https://img.shields.io/badge/inference--only-✓-brightgreen.svg" alt="inference-only"/>
-  <img src="https://img.shields.io/badge/license-Non--Commercial%20Research-orange.svg" alt="license"/>
+  <img src="https://img.shields.io/badge/license-CC%20BY--NC%204.0-orange.svg" alt="license"/>
 </p>
 
 <p align="center">
@@ -45,7 +45,7 @@
 ## 📰 News
 
 - 2026-06-16 — beta-v2370:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
-- 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + Non-Commercial Research License)
+- 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + CC BY-NC 4.0)
 
 ## ✨ 특징
 
@@ -269,13 +269,13 @@ image = pipe(prompt="a red apple on a wooden table",
 
 ## 📄 라이센스
 
-이 프로젝트는 **PIERROT Non-Commercial Research License (v1.0)** 를 따릅니다 — 자세한 내용은 [LICENSE](LICENSE) 참고.
+이 프로젝트는 **CC BY-NC 4.0** (Creative Commons Attribution-NonCommercial 4.0 International) 를 따릅니다 — 자세한 내용은 [LICENSE](LICENSE) 참고.
 
 - ✅ **연구 · 학술 · 교육 · 개인 실험** 목적의 사용 / 수정 / 재배포 허용
 - ❌ **상업적 사용 금지** — 유료 서비스 · 제품 · API · 상업 모델 개발 등 (모델 가중치 · 생성 결과물 포함)
-- 재배포 · 파생물은 **동일 라이센스 유지 + 출처 표기** ([Pierrot-vision/Pierrot](https://github.com/Pierrot-vision/Pierrot))
+- 재배포 · 파생물은 **출처 표기** 필요 (저작자 · 라이센스 링크 · 변경 사항 명시, [Pierrot-vision/Pierrot](https://github.com/Pierrot-vision/Pierrot))
 - 학습에 사용된 외부 데이터셋 · 모델 · 라이브러리는 **각자의 라이센스**를 따릅니다
-- 상업적 이용 문의는 nmaintainer에게 연락해 주세요
+- 상업적 이용 문의는 메인테이너에게 연락해 주세요
 
 ## 💬 잡담
 
