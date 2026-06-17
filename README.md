@@ -254,7 +254,7 @@ image = pipe(prompt="a red apple on a wooden table",
 - [ ] Post-Training : SFT → 코드만 완료 → 리소스 부족으로 실행 무
 - [ ] Post-Training : DPO 같은 알고리즘 개발 
 - [ ] depth growth 스케일업 (→ 2.2B) → 현재 테스트 진행중
-- [ ] few-step 모델 개발 (distillation 버전)
+- [ ] Turbo 버전 모델 개발 - few-step & cfg distillation 
 - [ ] 정량 벤치마크 (GenEval / DPG-Bench 등)
 - [ ] Edit 모델 개발 → Domain-Speicific 영역에서 계획중 
 - [ ] Next (새로운 알고리즘) 모델 개발 → 코드만 완료 → 리소스 부족으로 실행 무
