@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg" alt="pytorch"/>
   <img src="https://img.shields.io/badge/model-0.857B-success.svg" alt="params"/>
   <img src="https://img.shields.io/badge/inference--only-✓-brightgreen.svg" alt="inference-only"/>
-  <img src="https://img.shields.io/badge/license-CC%20BY--NC%204.0-orange.svg" alt="license"/>
+  <img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-orange.svg" alt="license"/>
 </p>
 
 <p align="center">
@@ -45,7 +45,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 ## 📰 News
 
 - 2026-06-16 — `beta-v2370` base 0.8b (v1) inference checkpoint released ([download ↓](#-checkpoints))
-- 2026-06-16 — PIERROT inference-only package released (code + deps + docs + CC BY-NC 4.0)
+- 2026-06-16 — PIERROT inference-only package released (code + deps + docs + CC BY-NC-SA 4.0)
 
 ## ✨ Features
 
@@ -267,11 +267,11 @@ See `python -m PIERROT.sample --help` for all options.
 
 ## 📄 License
 
-This project is licensed under **CC BY-NC 4.0** (Creative Commons Attribution-NonCommercial 4.0 International) — see [LICENSE](LICENSE) for details.
+This project is licensed under **CC BY-NC-SA 4.0** (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International) — see [LICENSE](LICENSE) for details.
 
 - ✅ Use / modify / redistribute allowed for **research · academic · educational · personal experimentation**
 - ❌ **No commercial use** — paid services · products · APIs · commercial model development, etc. (includes model weights · generated outputs)
-- Redistributions / derivatives must give **attribution** (credit · license link · indicate changes; [Pierrot-vision/Pierrot](https://github.com/Pierrot-vision/Pierrot))
+- Redistributions / derivatives must use the **same license (CC BY-NC-SA 4.0) + attribution** (credit · license link · indicate changes; [Pierrot-vision/Pierrot](https://github.com/Pierrot-vision/Pierrot))
 - External datasets · models · libraries used in training are subject to **their own licenses**
 - For commercial licensing, please contact the maintainer
 
