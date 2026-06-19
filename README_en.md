@@ -44,6 +44,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 
 ## 📰 News
 
+- 2026-06-18 — 📚 Latest paper review: [Query-Kontext: Unified Multimodal Model for Image Generation and Editing](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_Query-Kontext.md) ([Reading-Papers](https://github.com/Pierrot-vision/Reading-Papers))
 - 2026-06-16 — `beta-v2370` base 0.8b (v1) inference checkpoint released ([download ↓](#-checkpoints))
 - 2026-06-16 — PIERROT inference-only package released (code + deps + docs + CC BY-NC-SA 4.0)
 

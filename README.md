@@ -54,6 +54,7 @@
 
 ## 📰 News
 
+- 2026-06-18 — 📚 최신 논문 리뷰: [Query-Kontext: Unified Multimodal Model for Image Generation and Editing](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_Query-Kontext.md) ([Reading-Papers](https://github.com/Pierrot-vision/Reading-Papers))
 - 2026-06-16 — beta-v2370:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
 - 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + CC BY-NC-SA 4.0)
 
