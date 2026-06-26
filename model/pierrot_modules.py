@@ -281,6 +281,84 @@ class QKNorm(nn.Module):
         return self.query_norm(q).to(v), self.key_norm(k).to(v)
 
 
+class TextAdapterBlock(nn.Module):
+    """텍스트 토큰 시퀀스 정제용 transformer 블록 — self-attention + SwiGLU MLP, zero-init 잔차.
+
+    pre-RMSNorm self-attention(QK norm) 과 pre-RMSNorm SwiGLU MLP 를 잔차로 더한다.
+    두 잔차 출력 사영 (proj, mlp_down) 을 zero-init 하여 학습 시작 시 블록이 항등
+    (block(x) = x) 이 되게 한다.
+
+    Args:
+        dim:       토큰 채널 (= 모델 hidden_size).
+        num_heads: attention head 수.
+        mlp_ratio: SwiGLU hidden 확장 비율.
+    """
+
+    def __init__(self, dim: int, num_heads: int, mlp_ratio: float = 4.0):
+        super().__init__()
+        self.num_heads = num_heads
+        self.head_dim  = dim // num_heads
+
+        self.attn_norm = RMSNorm(dim)                                           # pre-norm (attn)
+        self.qkv       = nn.Linear(dim, dim * 3, bias=True)                     # (B, L, D) → (B, L, 3D)
+        self.qk_norm   = QKNorm(self.head_dim)                                  # Q/K head_dim RMSNorm
+        self.proj      = nn.Linear(dim, dim, bias=True)                         # attn 출력 사영 (zero-init)
+
+        mlp_hidden     = int(2 / 3 * dim * mlp_ratio)                          # SwiGLU inner 폭 (2/3 보정)
+        self.mlp_norm  = RMSNorm(dim)                                           # pre-norm (MLP)
+        self.mlp_gate  = nn.Linear(dim, mlp_hidden, bias=True)                  # SwiGLU gate  (B, L, D) → (B, L, 2/3·D·ratio)
+        self.mlp_up    = nn.Linear(dim, mlp_hidden, bias=True)                  # SwiGLU value (B, L, D) → (B, L, 2/3·D·ratio)
+        self.mlp_down  = nn.Linear(mlp_hidden, dim, bias=True)                  # SwiGLU 출력  (B, L, 2/3·D·ratio) → (B, L, D) (zero-init)
+
+        nn.init.zeros_(self.proj.weight);     nn.init.zeros_(self.proj.bias)     # zero-init → 잔차 초기 +0
+        nn.init.zeros_(self.mlp_down.weight); nn.init.zeros_(self.mlp_down.bias) # zero-init → 잔차 초기 +0
+
+    def forward(self, x: Tensor) -> Tensor:
+        """입력: (B, L, D)   출력: (B, L, D) — shape 유지."""
+        # self.qkv — Linear(D → 3D).   bidirectional self-attention 용 Q/K/V 한 번에 사영.
+        qkv     = self.qkv(self.attn_norm(x))                            # (B, L, 3D)
+        # einops.rearrange — (B, L, 3·H·D) → 3 × (B, H, L, D) 로 Q/K/V split + head 축 분리.
+        q, k, v = rearrange(qkv, "B L (three H D) -> three B H L D", three=3, H=self.num_heads)
+        # self.qk_norm(QKNorm) — Q/K 각자 RMSNorm (bf16 softmax 안정).   v 는 dtype 정합용.
+        q, k    = self.qk_norm(q, k, v)                                  # (B, H, L, D)
+        # compute_attention() — SDPA wrapper.   mask 없음 (텍스트 bidirectional).
+        attn    = compute_attention(q, k, v)                            # (B, H, L, D)
+        # einops.rearrange — head 축 다시 합침.
+        attn    = rearrange(attn, "B H L D -> B L (H D)")               # (B, L, D)
+        x       = x + self.proj(attn)                                   # 잔차 (zero-init → 초기 +0)
+        # SwiGLU MLP — down(silu(gate(x)) · up(x)).
+        h       = self.mlp_norm(x)                                      # (B, L, D)
+        x       = x + self.mlp_down(F.silu(self.mlp_gate(h)) * self.mlp_up(h))  # 잔차 (zero-init → 초기 +0)
+        return x
+
+
+class TextAdapter(nn.Module):
+    """텍스트 인코더 사영(txt_in) 출력을 정제하는 경량 transformer adapter.
+
+    txt_in(Linear) 뒤에 self-attention 블록 N 개를 잔차로 얹는다.   각 블록이 zero-init
+    잔차라 학습 시작 시 adapter(x) ≈ x → 기존 ckpt(어댑터 없는 버전) 와 출력 동일·호환.
+
+    Args:
+        dim:       토큰 채널 (= 모델 hidden_size).
+        depth:     transformer 블록 수.
+        num_heads: attention head 수.
+        mlp_ratio: MLP 확장 비율.
+    """
+
+    def __init__(self, dim: int, depth: int, num_heads: int, mlp_ratio: float = 4.0):
+        super().__init__()
+        self.blocks = nn.ModuleList([
+            TextAdapterBlock(dim, num_heads, mlp_ratio=mlp_ratio)
+            for _ in range(depth)
+        ])
+
+    def forward(self, x: Tensor) -> Tensor:
+        """입력: (B, L_txt, dim)   출력: (B, L_txt, dim) — shape 유지."""
+        for block in self.blocks:
+            x = block(x)                                                # (B, L_txt, dim)
+        return x
+
+
 @dataclass
 class ModulationOut:
     """AdaLN-Zero 한 경로분 (shift, scale, gate).  각 (B, 1, d).

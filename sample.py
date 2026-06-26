@@ -63,6 +63,12 @@ def parse_args() -> argparse.Namespace:
                    help="Z6: modulation 입력 dim cap")
     p.add_argument("--n-kv-heads",         type=int, default=4,
                    help="Z7: GQA K/V head 수")
+    p.add_argument("--use-text-adapter",       action=argparse.BooleanOptionalAction, default=None,
+                   help="i1 텍스트 adapter.   None 이면 ckpt 의 text_adapter.* 키 유무로 자동 감지")
+    p.add_argument("--text-adapter-depth",     type=int, default=None,
+                   help="텍스트 adapter 블록 수.   None 이면 ckpt 에서 자동 추론, 없으면 2")
+    p.add_argument("--text-adapter-mlp-ratio", type=float, default=None,
+                   help="텍스트 adapter SwiGLU 확장 비율.   None 이면 학습 default 4.0")
     # 텍스트 / VAE
     p.add_argument("--text-encoder-id",        type=str, default="Qwen/Qwen3-4B",
                    help="HuggingFace text encoder (학습 precompute 와 동일 모델)")
@@ -183,6 +189,23 @@ def build_model(args: argparse.Namespace) -> PIERROT:
         elif "ema_model" in state and isinstance(state["ema_model"], dict):
             state = state["ema_model"]
             print("[INFO] EMA 체크포인트 감지 — ema_model state_dict 사용")
+
+    # i1 텍스트 adapter — ckpt 안 text_adapter.* 키가 있으면 자동 감지 (depth 포함).
+    # 어댑터 없는(기존) ckpt 는 키가 없어 use_text_adapter=False → strict 로드 그대로 OK.
+    ckpt_adapter_depth = None
+    if isinstance(state, dict):
+        # "text_adapter.blocks.{i}.*" 키들에서 블록 인덱스 i 의 최대값 + 1 = depth.
+        blk_ids = {int(k.split(".")[2]) for k in state if k.startswith("text_adapter.blocks.")}
+        if blk_ids:
+            ckpt_adapter_depth = max(blk_ids) + 1
+    use_text_adapter = args.use_text_adapter if args.use_text_adapter is not None else (ckpt_adapter_depth is not None)
+    config["use_text_adapter"] = use_text_adapter
+    if use_text_adapter:
+        config["text_adapter_depth"]     = args.text_adapter_depth if args.text_adapter_depth is not None else (ckpt_adapter_depth or 2)
+        config["text_adapter_mlp_ratio"] = args.text_adapter_mlp_ratio if args.text_adapter_mlp_ratio is not None else 4.0
+        src = "ckpt" if ckpt_adapter_depth is not None else "CLI"
+        print(f"[INFO] 텍스트 adapter 활성 — depth={config['text_adapter_depth']}, "
+              f"mlp_ratio={config['text_adapter_mlp_ratio']}, source={src}")
 
     model = PIERROT(config)
 

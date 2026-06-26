@@ -18,6 +18,7 @@ from .pierrot_modules import (
     MLPEmbedder,
     PIERROTBlock,
     PIERROTDualBlock,
+    TextAdapter,
     get_image_ids_4d,
     get_text_ids_4d,
     timestep_embedding,
@@ -56,6 +57,9 @@ class PIERROTParams:
     adaln_embed_dim:        int  | None     = None    # Z-Image: modulation Linear 입력 차원 cap
     use_rmsnorm:            bool            = False   # Z-Image: 블록 pre/post norm 을 RMSNorm 으로
     axes_max_len:           list[int] | None = None   # Z-Image: RoPE freqs precompute cache 각 축 max
+    use_text_adapter:       bool            = False   # i1: txt_in 뒤 self-attention adapter (zero-init 잔차, OFF=항등)
+    text_adapter_depth:     int             = 2       # text adapter transformer 블록 수
+    text_adapter_mlp_ratio: float           = 4.0     # text adapter MLP 확장 비율
 
 
 def img2seq(img: Tensor, patch_size: int) -> Tensor:
@@ -205,6 +209,17 @@ class PIERROT(nn.Module):
         self.time_in = MLPEmbedder(in_dim=256, hidden_dim=self.effective_embed_dim)  # (B, 256)              → (B, effective_embed_dim)
         self.txt_in  = nn.Linear(params.context_in_dim, self.hidden_size)            # (B, L_txt, ctx_dim)   → (B, L_txt, hidden)
 
+        # txt_in 뒤 self-attention adapter (옵션) — zero-init 잔차라 OFF/어댑터 없는 ckpt 와 출력 동일.
+        self.text_adapter = (
+            TextAdapter(
+                dim       = self.hidden_size,
+                depth     = params.text_adapter_depth,
+                num_heads = self.num_heads,
+                mlp_ratio = params.text_adapter_mlp_ratio,
+            )
+            if params.use_text_adapter else None
+        )
+
         # 트랜스포머 스택 — 앞 dual_block_count 개는 PIERROTDualBlock, 나머지는 PIERROTBlock
         conditioning_block_ids = params.conditioning_block_ids or list(range(params.depth))
 
@@ -248,6 +263,9 @@ class PIERROT(nn.Module):
         """
         # self.txt_in — nn.Linear(context_in_dim → hidden_size).   텍스트 인코더 출력 차원을 모델 hidden 으로 사영.
         txt         = self.txt_in(txt)                        # (B, L_txt, ctx_dim) → (B, L_txt, hidden)
+        # self.text_adapter — TextAdapter (옵션).   None 이면 SKIP (txt_in 출력 그대로).
+        if self.text_adapter is not None:
+            txt     = self.text_adapter(txt)                 # (B, L_txt, hidden)  → (B, L_txt, hidden)
         # img2seq() — 위 정의.   unfold + transpose 로 (B, C, H, W) 를 (B, N, C·p·p) 패치 시퀀스로 펼침.
         img         = img2seq(image_latent, self.patch_size)  # (B, N, patch_dim)   N = (H/p)·(W/p)
         bs, _, h, w = image_latent.shape                      # latent H, W (patch_size 의 배수 가정)
