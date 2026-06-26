@@ -44,7 +44,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 
 ## 📰 News
 
-- 2026-06-18 — 📚 Latest paper review: [Query-Kontext: Unified Multimodal Model for Image Generation and Editing](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_Query-Kontext.md)
+- 2026-06-19 — 📚 Latest paper review: [i1: A Recipe for Text-to-Image Diffusion from Public Materials](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_i1.md)
 - 2026-06-16 — `beta-v2370` base 0.8b (v1) inference checkpoint released ([download ↓](#-checkpoints))
 - 2026-06-16 — PIERROT inference-only package released (code + deps + docs + CC BY-NC-SA 4.0)
 
@@ -252,14 +252,14 @@ See `python -m PIERROT.sample --help` for all options.
 
 **In progress / planned**
 
-- [ ] Post-Training: SFT
+- [ ] Post-Training: SFT → code done → 0.8b in progress
 - [ ] Post-Training: algorithms like DPO
-- [ ] Depth-growth scale-up (→ 2.2B)
-- [ ] Checkpoint release (Hugging Face)
-- [ ] Few-step model (distillation version)
+- [ ] Depth-growth scale-up (→ 1.6B) → training in progress
+- [ ] Depth-growth scale-up (→ 2.2B) → testing in progress
+- [ ] Turbo version — few-step & CFG distillation
 - [ ] Quantitative benchmarks (GenEval / DPG-Bench, etc.)
-- [ ] Edit model
-- [ ] Next (new-algorithm) model
+- [ ] Edit model → planned for domain-specific use
+- [ ] Next (new-algorithm) model → code done → not run (resource-limited)
 - [ ] Add LoRA models
 
 ## 🤗 Reference

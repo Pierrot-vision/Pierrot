@@ -54,7 +54,7 @@
 
 ## 📰 News
 
-- 2026-06-18 — 📚 최신 논문 리뷰: [Query-Kontext: Unified Multimodal Model for Image Generation and Editing](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_Query-Kontext.md)
+- 2026-06-19 — 📚 최신 논문 리뷰: [i1: A Recipe for Text-to-Image Diffusion from Public Materials](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_i1.md)
 - 2026-06-16 — beta-v2370:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
 - 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + CC BY-NC-SA 4.0)
 
@@ -265,8 +265,9 @@ image = pipe(prompt="a red apple on a wooden table",
 
 **진행 / 예정**
 
-- [ ] Post-Training : SFT → 코드만 완료 → 리소스 부족으로 실행 무
+- [ ] Post-Training : SFT → 코드만 완료 → 0.8b 진행중
 - [ ] Post-Training : DPO 같은 알고리즘 개발 
+- [ ] depth growth 스케일업 (→ 1.6B) → 학습 진행중
 - [ ] depth growth 스케일업 (→ 2.2B) → 현재 테스트 진행중
 - [ ] Turbo 버전 모델 개발 - few-step & cfg distillation 
 - [ ] 정량 벤치마크 (GenEval / DPG-Bench 등)
