@@ -255,7 +255,7 @@ See `python -m PIERROT.sample --help` for all options.
 - [ ] Post-Training: SFT → code done → 0.8b in progress
 - [ ] Post-Training: algorithms like DPO
 - [ ] Depth-growth scale-up (→ 1.6B) → training in progress
-- [ ] Depth-growth scale-up (→ 2.2B) → testing in progress
+- [ ] Depth-growth scale-up (→ 3.2B) → planned
 - [ ] Turbo version — few-step & CFG distillation
 - [ ] Quantitative benchmarks (GenEval / DPG-Bench, etc.)
 - [ ] Edit model → planned for domain-specific use
