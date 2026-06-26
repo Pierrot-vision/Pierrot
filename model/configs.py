@@ -2,7 +2,7 @@
 
 내용:
     _PIERROT_BASE   — preset 공통 default.
-    CONFIG_PRESETS  — 'tiny' / '0.8b' / '1.6b' 학습용 모델 크기 preset.
+    CONFIG_PRESETS  — 'tiny' / '0.8b' / '1.6b' / '3b' 학습용 모델 크기 preset.
                       크기 라벨은 24h 옵션(GQA n_kv=4 + adaln cap) 기준.   raw(MHA)는 더 큼.
 """
 _PIERROT_BASE: dict = {
@@ -38,6 +38,16 @@ CONFIG_PRESETS: dict[str, dict] = {
         "hidden_size":      1792,              # 0.8b 와 동일 (가중치 shape 호환 필수)
         "num_heads":        28,                # 동일
         "depth":            33,                # 16 → 33 (≈ 1.618B)
+        "dual_block_count": 3,                 # 동일
+        "axes_dim":         [16, 16, 16, 16],
+    },
+
+    # 깊이 성장 2단계 (1.6b 가중치 승계) — 너비 고정, depth 만 ↑.   약 3B급
+    "3b": {
+        **_PIERROT_BASE,
+        "hidden_size":      1792,              # 1.6b 와 동일 (가중치 shape 호환 필수)
+        "num_heads":        28,                # 동일
+        "depth":            64,                # 33 → 64 (≈ 3B)
         "dual_block_count": 3,                 # 동일
         "axes_dim":         [16, 16, 16, 16],
     },
