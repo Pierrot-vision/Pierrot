@@ -11,10 +11,10 @@
 
 읽는 순서는 다음을 추천한다.
 
-- 빠르게 결론만 보려면 1장과 15~18장을 먼저 본다.
+- 빠르게 결론만 보려면 1장과 15~17장을 먼저 본다.
 - blur/화질 저하 원인을 보려면 2~6장을 본다.
-- 실제 설정값과 데이터 믹스를 보려면 7~10장, 17장을 본다.
-- 다음 실험을 이어가려면 12~14장, 18~20장을 본다.
+- 실제 설정값과 데이터 믹스를 보려면 7~10장을 본다.
+- 다음 실험을 이어가려면 12~14장, 17~19장을 본다.
 
 이 문서에서 “base”는 phase2 base 학습 checkpoint를, “SFT”는 phase2 이후 benchmark/instruction/binding 성능을 올리기 위한 후속 학습을 뜻한다. “SFT aux”는 원래 SFT에서 쓰던 데이터셋 일부를 base resume 학습에 낮은 비율로 섞어 넣은 보강 데이터를 뜻한다.
 
@@ -217,7 +217,7 @@ args.aux_warmup_steps = 1000
 
 ## 10. SFT 데이터 믹스에서 배운 점
 
-이 장은 `phase2_sft_2` SFT 믹스를 조정하면서 얻은 판단을 정리한 것이다. 2026-07-01 이후에는 이 판단을 바탕으로 “SFT aux 일부를 base resume에 먼저 흡수하는 실험”을 추가했다. 그 최신 base resume 분포는 16~18장에 따로 정리했다.
+이 장은 `phase2_sft_2` SFT 믹스를 조정하면서 얻은 판단을 정리한 것이다. 2026-07-01 이후에는 이 판단을 바탕으로 “SFT aux 일부를 base resume에 먼저 흡수하는 실험”을 추가했다. base resume 운영 규칙은 16~17장에 따로 정리했다.
 
 현재 SFT는 단순 polish set만 쓰는 것이 아니라 base retention replay를 많이 섞은 상태다. 방향은 다음과 같다.
 
@@ -372,53 +372,7 @@ final SFT:
 
 이 실험은 장기 base 분포를 확정한 것이 아니라, 이전 base 모델을 이어서 학습할 때 초반 10k~30k step 정도의 교정용 curriculum으로 보는 것이 맞다.
 
-## 17. 현재 base resume active exposure snapshot
-
-아래 표는 2026-07-02 현재 `parse_args_24h_1024()`를 실제 호출했을 때의 active dataset list 기준이다. rotation 후보 전체를 모두 더한 표가 아니라, 현재 active part snapshot 기준이다. `🔄`가 붙은 rotation group은 학습 중 rotation step에서 다른 part로 교체될 수 있으므로, 시간 평균 표와 active snapshot 표를 혼동하면 안 된다.
-
-총 effective rows: 약 `25,503,155`.
-
-| 순위 | Dataset | Rows | Active % | 카테고리 | 형태 |
-| ---: | --- | ---: | ---: | --- | --- |
-| 1 | flux_reason_6m | 5,890,279 | 10.90% | base original replay | Always |
-| 2 | flux_generated | 1,745,731 | 8.73% | base original replay | 🔄 others2 |
-| 3 | fine_t2i_curated | 168,424 | 7.00% | 실사, SFT aux | Always |
-| 4 | ovis_image_text_hard_synth | 80,104 | 5.53% | text 렌더 hard | Always |
-| 5 | ovis_image_text_synth | 129,991 | 5.53% | text 렌더 short | Always |
-| 6 | ovis_outfit_couple_synth | 27,724 | 5.45% | 2-person/outfit binding, SFT aux | Always |
-| 7 | blip3o_60k | 58,859 | 5.45% | binding/composition, SFT aux | Always |
-| 8 | monet_megalith_part1 | 890,233 | 5.00% | base original replay | 🔄 monets |
-| 9 | instrument_relation_subset_clean | 22,713 | 4.36% | 악기 binding | Always |
-| 10 | pierrot_weakness_combined | 536,312 | 4.21% | text + 약점 mix | Always |
-| 11 | person_full_model | 177,357 | 4.00% | full-body human | Always |
-| 12 | fine_t2i_synthetic | 1,615,592 | 3.28% | 합성, SFT aux | Always |
-| 13 | couple_combined | 26,765 | 3.27% | multi-person binding | Always |
-| 14 | ovis_scene_text_confusable_synth | 4,942 | 3.27% | text confusable, SFT aux | Always |
-| 15 | facecaption_base_mix | 127,122 | 2.94% | face/portrait | Always |
-| 16 | fashion_people_combined | 593,141 | 2.22% | fashion + person | Always |
-| 17 | dalle3_sft | 1,192,572 | 2.18% | 합성/instruction, SFT aux | Always |
-| 18 | anyword_laion_easy_text_multicap | 120,145 | 2.09% | text exact spelling | Always |
-| 19 | anyword_laion_short_text_multicap | 474,454 | 2.00% | text 렌더 short | Always |
-| 20 | cc12m_part1 | ~4,000,000 | 1.85% | web base prior | 🔄 cc12m |
-| 21 | diffusiondb_part1 | 929,775 | 1.69% | base original replay | 🔄 others-diff |
-| 22 | pexels | 557,987 | 1.11% | photo base prior | Always |
-| 23 | predicate_relation_subset | 10,900 | 1.10% | predicate binding | Always |
-| 24 | object_grounding_sft_10k_multicap | 10,000 | 0.99% | object grounding, SFT aux | Always |
-| 25 | base_prior_hq_image_sft_300k | 300,000 | 0.99% | HQ base-prior bridge, SFT aux | Always |
-| 26 | portrait_sft_mix | 7,143 | 0.79% | portrait realism, SFT aux | Always |
-| 27 | human_hq_sft_subset | 50,000 | 0.79% | human realism, SFT aux | Always |
-| 28 | animal_hq_sft_subset | 30,000 | 0.59% | animal realism, SFT aux | Always |
-| 29 | textcaps_clean_multicap | 571 | 0.54% | text seed | Always |
-| 30 | deepfashion_multimodal | 12,700 | 0.50% | full-body fashion | Always |
-| 31 | human_caption_hq | 7,757 | 0.49% | portrait caption, SFT aux | Always |
-| 32 | text_to_image_2m_1024_10k | 10,000 | 0.39% | high-res synthetic, SFT aux | Always |
-| 33 | sharegpt4o_sft | 45,717 | 0.39% | synthetic instruction, SFT aux | Always |
-| 34 | aesthetic_4k | 12,009 | 0.20% | 4K aesthetic, SFT aux | Always |
-| 35 | alchemist | 3,114 | 0.15% | aesthetic polish, SFT aux | Always |
-
-주의: `midjourney_v6_recap`, `journeydb_part*`, `monet_coyo_part*`, `cc12m_part*`, `diffusiondb_part*` 등은 rotation 후보로 존재한다. 이들을 모두 한 표에 동시에 더하면 현재 active batch 분포와 맞지 않는다. active snapshot, rotation 후보별 active %, 시간 평균 exposure를 구분해서 봐야 한다.
-
-## 18. SFT aux warm phase 운영 규칙
+## 17. SFT aux warm phase 운영 규칙
 
 현재 분포는 장기 고정 분포라기보다 초기 교정용 warm phase다. 이전 base 모델을 resume할 때 SFT aux를 조금 더 강하게 넣는 것은 타당하지만, 계속 오래 유지하면 synthetic tone이나 prompt-local regression이 base 쪽으로 흡수될 수 있다.
 
@@ -464,7 +418,7 @@ fine_t2i_curated:            7.00% -> 5.0%
 
 단, `fine_t2i_curated`는 현재 실사 anchor 역할이 크므로 가장 마지막에 줄이는 것이 안전하다.
 
-## 19. Prompt distribution 관련 관찰
+## 18. Prompt distribution 관련 관찰
 
 SFT/base-aux 문제를 볼 때 dataset 비율만큼 중요한 것이 prompt 문체다. 실제 샘플 확인 결과, 현재 학습셋의 안정적인 caption 문체는 대체로 다음과 같다.
 
@@ -488,7 +442,7 @@ a [object] with visible parts, centered composition, realistic lighting
 이 관찰은 dataset mix와 별개의 추론 prompt 안정성 문제이므로, checkpoint 비교 시 동일 seed와 함께 prompt variant A/B도 남겨야 한다.
 
 
-## 20. 이 실험 일기에서 가져갈 교훈
+## 19. 이 실험 일기에서 가져갈 교훈
 
 이 실험에서 가장 크게 배운 점은 다음이다.
 
