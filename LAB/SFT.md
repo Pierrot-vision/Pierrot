@@ -452,3 +452,24 @@ a [object] with visible parts, centered composition, realistic lighting
 4. SFT 데이터셋을 base resume에 섞는 방식은 갑작스러운 overwrite를 줄이는 대안이 될 수 있다. 다만 이것도 장기 고정 분포가 아니라 warm phase로 보고, 좋아진 뒤에는 줄여야 한다.
 5. 평가는 반드시 같은 seed, 같은 prompt, 같은 checkpoint 간격으로 해야 한다. 평균적으로 좋아져도 특정 golden prompt가 망가질 수 있기 때문이다.
 6. 최종 결론을 너무 빨리 내리지 않는다. 이 문서의 여러 판단도 checkpoint와 샘플을 보면서 계속 수정된 것이다. 따라서 새로운 실험을 이어갈 때는 이 문서를 정답지가 아니라, 실패를 줄이기 위한 지도처럼 쓰는 것이 맞다.
+
+## 20. 현재까지의 최종 판단
+
+현재까지의 결론은 다음처럼 정리할 수 있다.
+
+특정 benchmark 성능만 올리는 것이 목표라면, 일부 benchmark 친화적인 데이터셋만 골라 SFT하는 방식은 효과가 있을 수 있다. 예를 들어 text rendering, multi-object binding, two-person binding, object grounding처럼 평가 항목이 비교적 분명한 경우에는 그 항목에 맞는 데이터셋을 강하게 넣는 SFT가 빠르게 점수를 올릴 수 있다.
+
+하지만 이 방식은 전체 모델 성능 관점에서는 위험하다. base 학습은 훨씬 넓은 데이터셋으로 이미지, caption, style, object, composition의 확률 분포를 길게 배운 상태다. 여기에 좁은 SFT 데이터셋을 강하게 넣으면, benchmark에 필요한 능력은 좋아질 수 있지만 base가 가지고 있던 넓은 분포가 일부 깨질 수 있다. 실제로 SFT 후에는 전반적인 blur 문제는 LPIPS/P-DINO로 어느 정도 막을 수 있었지만, base에서 잘 나오던 일부 prompt가 약해지는 현상이 남았다.
+
+따라서 현재 판단은 다음이다.
+
+- benchmark 평가만 목표라면 SFT는 하나의 유효한 방법이다.
+- 하지만 전체 생성 품질과 base prior를 함께 보존해야 한다면, 좁은 SFT만으로 해결하려는 것은 좋은 대안이 아니다.
+- SFT는 모델 전체를 개선하는 만능 단계라기보다, 특정 평가 항목을 빠르게 끌어올리는 patch에 가깝다.
+- 전체 성능을 목표로 한다면 SFT 데이터셋을 base 학습셋에 섞어 넣고, base 학습을 이어가면서 천천히 흡수시키는 쪽이 더 안전하다.
+
+그래서 현재 방향은 SFT를 완전히 버리는 것이 아니라, SFT가 맡고 있던 benchmark/binding/text/realism 보강 데이터셋을 base 학습셋에 추가하고 phase2 base 학습을 이어가는 것이다. 이렇게 하면 특정 benchmark 능력을 얻으면서도, base가 넓은 학습셋으로 형성한 확률 분포를 갑자기 깨뜨릴 위험을 줄일 수 있다.
+
+한 문장으로 적으면 다음과 같다.
+
+> SFT는 benchmark 점수를 올리는 데는 유용하지만, 전체 모델 품질을 위한 최종 해법은 아니며, 현재는 SFT 데이터를 base 학습에 섞어 이어 학습하는 방향이 더 타당하다고 판단한다.
