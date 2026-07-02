@@ -44,6 +44,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 
 ## 📰 News
 
+- 2026-07-02 — 🧪 LAB (experiment log) opened — SFT experiment & ops notes ([LAB/SFT.md](LAB/SFT.md))
 - 2026-06-19 — 📚 Latest paper review: [i1: A Recipe for Text-to-Image Diffusion from Public Materials](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_i1.md)
 - 2026-06-16 — `beta-v2370` base 0.8b (v1) inference checkpoint released ([download ↓](#-checkpoints))
 - 2026-06-16 — PIERROT inference-only package released (code + deps + docs + CC BY-NC-SA 4.0)
