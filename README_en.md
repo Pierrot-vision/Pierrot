@@ -250,10 +250,10 @@ See `python -m PIERROT.sample --help` for all options.
 - [x] Inference-only package split — zero training dependencies
 - [x] CLI / Python API inference pipeline
 - [x] Multi-reference input support (code only)
+- [x] Post-Training: SFT → 0.8b done → see [SFT.md](LAB/SFT.md)
 
 **In progress / planned**
 
-- [ ] Post-Training: SFT → code done → 0.8b in progress
 - [ ] Post-Training: algorithms like DPO
 - [ ] Depth-growth scale-up (→ 1.6B) → training in progress
 - [ ] Depth-growth scale-up (→ 3.2B) → planned

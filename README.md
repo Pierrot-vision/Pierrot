@@ -263,10 +263,10 @@ image = pipe(prompt="a red apple on a wooden table",
 - [x] CLI / Python API 추론 파이프라인
 - [x] 다중 참조(multi-reference) 입력 지원 → 코드만 완료
 - [x] 체크포인트 공개
+- [x] Post-Training : SFT → 0.8b 완료 → [SFT.md](LAB/SFT.md) 참조
 
 **진행 / 예정**
 
-- [ ] Post-Training : SFT → 코드만 완료 → 0.8b 진행중
 - [ ] Post-Training : DPO 같은 알고리즘 개발 
 - [ ] depth growth 스케일업 (→ 1.6B) → 학습 진행중
 - [ ] depth growth 스케일업 (→ 3.2B) → 예정
