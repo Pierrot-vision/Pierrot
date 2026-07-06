@@ -37,9 +37,9 @@
 As the sample grid below shows, the quality is quite decent **for a 0.8B-scale model**.
 
 <p align="center">
-  <img src="docs/baseprior_grid_20260616.png" width="100%" alt="PIERROT 0.8B sample grid"/>
+  <img src="docs/baseprior_grid_step02370000_20260616.png" width="100%" alt="PIERROT 0.8B sample grid"/>
   <br/>
-  <sub>PIERROT 0.8B · 1024² · 28 steps — samples from diverse prompts</sub>
+  <sub>PIERROT 0.8B · step 2.37M · 1024² · 28 steps — samples from diverse prompts</sub>
 </p>
 
 ## 📰 News

@@ -37,9 +37,9 @@
 아래 샘플 그리드를 보면, **0.8B 규모치고는** 꽤 준수한 생성 품질을 보여줍니다.
 
 <p align="center">
-  <img src="docs/baseprior_grid_20260616.png" width="100%" alt="PIERROT 0.8B 생성 샘플 그리드"/>
+  <img src="docs/baseprior_grid_step02370000_20260616.png" width="100%" alt="PIERROT 0.8B 생성 샘플 그리드"/>
   <br/>
-  <sub>PIERROT 0.8B · 1024² · 28 steps — 다양한 프롬프트 생성 샘플</sub>
+  <sub>PIERROT 0.8B · step 2.37M · 1024² · 28 steps — 다양한 프롬프트 생성 샘플</sub>
 </p>
 
 ## 💬 잡담
