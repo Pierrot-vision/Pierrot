@@ -1,0 +1,425 @@
+{
+  "name": "PIERROT base-prior sample grid prompts",
+  "version": "2026-07-09",
+  "description": "PIERROT 의 step 별 샘플 그리드(LAB/0.8b.md, LAB/1.6b.md)를 만들 때 사용한 60개 프롬프트. base prior 학습셋의 캡션 스타일을 흉내 내어 새로 작성한 것이며, 학습 캡션을 복사한 것이 아니다.",
+  "generation": {
+    "resolution": [
+      1024,
+      1024
+    ],
+    "num_inference_steps": 28,
+    "guidance_scale": 4.0,
+    "seed": 42,
+    "seed_policy": "프롬프트마다 동일 seed 재설정 (재현 가능)",
+    "negative_prompt": "",
+    "chi_prompt": null,
+    "weights": "EMA checkpoint (ema.pt)",
+    "grid_layout": {
+      "cols": 10,
+      "rows": 6,
+      "tile_px": 400,
+      "gap_px": 0
+    },
+    "grid_order": "id 오름차순 (좌→우, 상→하)"
+  },
+  "style_groups": [
+    {
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "description_ko": "자연 서술형 다중 주체 장면",
+      "ids": [
+        1,
+        15
+      ]
+    },
+    {
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "description_ko": "디테일 풍부한 단일 장면 묘사",
+      "ids": [
+        16,
+        30
+      ]
+    },
+    {
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "description_ko": "짧은 웹/제품 캡션",
+      "ids": [
+        31,
+        45
+      ]
+    },
+    {
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "description_ko": "아티스틱 키워드 나열형",
+      "ids": [
+        46,
+        60
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": 1,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A photorealistic image of two children building a sandcastle on a sunny beach while a small dog watches nearby."
+    },
+    {
+      "id": 2,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A cozy scene of an elderly couple sharing tea at a wooden kitchen table, warm morning light streaming through the window."
+    },
+    {
+      "id": 3,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A group of friends gathered around a campfire at night, roasting marshmallows under a starry sky."
+    },
+    {
+      "id": 4,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A serene image of a woman reading a book in a hammock strung between two palm trees on a tropical island."
+    },
+    {
+      "id": 5,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A bustling street food market at dusk, vendors grilling skewers while crowds browse colorful stalls."
+    },
+    {
+      "id": 6,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A photorealistic image of three coworkers brainstorming around a whiteboard in a bright modern office."
+    },
+    {
+      "id": 7,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A young man playing an acoustic guitar on a rooftop terrace overlooking a city skyline at sunset."
+    },
+    {
+      "id": 8,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A family of four hiking along a forest trail in autumn, surrounded by golden falling leaves."
+    },
+    {
+      "id": 9,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A chef and two assistants preparing dishes in a busy restaurant kitchen filled with rising steam."
+    },
+    {
+      "id": 10,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A group of cyclists riding along a coastal road with the ocean shimmering in the background."
+    },
+    {
+      "id": 11,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A mother and daughter baking cookies together in a sunlit kitchen, flour dusting the counter."
+    },
+    {
+      "id": 12,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A photorealistic image of a fisherman pulling in his net from a small wooden boat at dawn."
+    },
+    {
+      "id": 13,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "Two scientists examining samples in a laboratory, wearing white coats under bright lights."
+    },
+    {
+      "id": 14,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A street artist painting a vibrant mural on a brick wall while pedestrians pass by."
+    },
+    {
+      "id": 15,
+      "style": "natural_scene",
+      "caption_style_source": "flux_generated",
+      "prompt": "A couple dancing in an empty ballroom lit by a grand crystal chandelier."
+    },
+    {
+      "id": 16,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A rustic wooden bookshelf overflowing with leather-bound books, a brass reading lamp casting a warm glow on a worn armchair beside it."
+    },
+    {
+      "id": 17,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A vintage motorcycle parked outside a weathered garage, its chrome handlebars gleaming under the afternoon sun, oil stains marking the concrete floor."
+    },
+    {
+      "id": 18,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A delicate porcelain teacup filled with jasmine tea resting on a saucer beside a small plate of almond cookies on a lace tablecloth."
+    },
+    {
+      "id": 19,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A grand piano positioned in the corner of a sunlit conservatory, surrounded by potted ferns and tall windows draped with sheer curtains."
+    },
+    {
+      "id": 20,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A weathered fishing pier extending into a calm lake at sunrise, mist hovering above the water and a single rowboat tied to a post."
+    },
+    {
+      "id": 21,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "An antique globe on a mahogany desk cluttered with ink pens, folded maps, and a magnifying glass beneath a green banker's lamp."
+    },
+    {
+      "id": 22,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A market stall brimming with ripe tomatoes, leafy greens, and baskets of citrus, a handwritten chalkboard listing the day's prices."
+    },
+    {
+      "id": 23,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A cobblestone courtyard with a stone fountain at its center, ivy climbing the surrounding walls and wrought-iron lanterns glowing softly."
+    },
+    {
+      "id": 24,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A cluttered artist's studio with half-finished canvases leaning against the walls, brushes soaking in jars and sunlight pouring through a skylight."
+    },
+    {
+      "id": 25,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A snow-covered village street lined with timber houses, warm light spilling from frosted windows and a wreath hanging on every door."
+    },
+    {
+      "id": 26,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A tray of freshly glazed donuts arranged in neat rows behind a bakery's glass display case, soft overhead lighting catching the sugar."
+    },
+    {
+      "id": 27,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A greenhouse filled with blooming orchids of every color, water droplets clinging to the glass panes and a watering can resting on a bench."
+    },
+    {
+      "id": 28,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A worn leather suitcase covered in travel stickers sitting on a train platform as steam drifts past an arriving vintage locomotive."
+    },
+    {
+      "id": 29,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A quiet library reading room with rows of green-shaded lamps, tall arched windows and a spiral staircase leading to the upper shelves."
+    },
+    {
+      "id": 30,
+      "style": "detailed_scene",
+      "caption_style_source": "flux_reason",
+      "prompt": "A campsite at the edge of an alpine lake, a canvas tent pitched beside a crackling fire with mountains reflected in the still water."
+    },
+    {
+      "id": 31,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Minimalist ceramic coffee mug on a white background"
+    },
+    {
+      "id": 32,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Handmade wool scarf in warm autumn colors"
+    },
+    {
+      "id": 33,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Vintage film camera with a worn leather strap"
+    },
+    {
+      "id": 34,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Modern scandinavian living room interior design"
+    },
+    {
+      "id": 35,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Close-up of fresh basil leaves on a wooden cutting board"
+    },
+    {
+      "id": 36,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Golden hour view of a quiet mountain lake"
+    },
+    {
+      "id": 37,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Abstract watercolor painting in blue and gold"
+    },
+    {
+      "id": 38,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Rustic farmhouse kitchen with open shelving"
+    },
+    {
+      "id": 39,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Black and white portrait of a jazz musician"
+    },
+    {
+      "id": 40,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Three potted succulents on a bright windowsill"
+    },
+    {
+      "id": 41,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Aerial view of a winding coastal highway"
+    },
+    {
+      "id": 42,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Cozy reading nook with warm fairy lights"
+    },
+    {
+      "id": 43,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Freshly brewed espresso in a small glass cup"
+    },
+    {
+      "id": 44,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Hand-drawn botanical illustration of ferns"
+    },
+    {
+      "id": 45,
+      "style": "short_web_caption",
+      "caption_style_source": "cc12m",
+      "prompt": "Stack of vintage suitcases used as home decor"
+    },
+    {
+      "id": 46,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a majestic stag in an enchanted forest, volumetric fog, cinematic lighting, hyper detailed, octane render, 8k"
+    },
+    {
+      "id": 47,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "portrait of a wise old wizard with a long white beard, intricate robe, dramatic rim light, fantasy concept art, artstation"
+    },
+    {
+      "id": 48,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a serene japanese garden in spring, cherry blossoms falling, soft pastel palette, studio ghibli style, highly detailed"
+    },
+    {
+      "id": 49,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "cyberpunk city alley at night, neon reflections on wet pavement, rain, atmospheric, blade runner aesthetic, ultra detailed"
+    },
+    {
+      "id": 50,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "an astronaut standing on an alien planet with two moons, vivid nebula sky, dramatic scale, sci-fi concept art, sharp focus"
+    },
+    {
+      "id": 51,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "underwater ancient ruins with shafts of sunlight, schools of fish, ethereal, photorealistic, deep blue tones, 8k"
+    },
+    {
+      "id": 52,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a steampunk airship floating above the clouds, brass and copper details, golden hour, intricate, matte painting"
+    },
+    {
+      "id": 53,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a lone lighthouse on a cliff during a thunderstorm, dramatic crashing waves, moody, cinematic, hyper realistic"
+    },
+    {
+      "id": 54,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a fantasy castle on a floating island, waterfalls cascading into the void, epic scale, concept art, vibrant colors"
+    },
+    {
+      "id": 55,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a fox spirit in a misty bamboo forest, glowing tails, magical particles, ink wash painting style, elegant"
+    },
+    {
+      "id": 56,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "macro shot of a dewy spider web at dawn, soft bokeh background, ultra sharp, nature photography, gentle light"
+    },
+    {
+      "id": 57,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a cozy witch's cottage in autumn woods, glowing windows, pumpkins, warm tones, storybook illustration, detailed"
+    },
+    {
+      "id": 58,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "surreal floating islands with giant glowing jellyfish drifting in the sky, dreamlike, vivid colors, digital art, intricate"
+    },
+    {
+      "id": 59,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a knight in ornate silver armor standing before a dragon in a fiery cave, epic fantasy, dramatic lighting, highly detailed"
+    },
+    {
+      "id": 60,
+      "style": "artistic_keywords",
+      "caption_style_source": "diffusiondb",
+      "prompt": "a retro 1980s synthwave landscape with a grid sunset and palm trees, neon pink and purple, vaporwave aesthetic"
+    }
+  ]
+}
