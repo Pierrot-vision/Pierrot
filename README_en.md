@@ -44,7 +44,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 
 ## 📰 News
 
-- 2026-07-09 — 🖼️ Per-step sample observations published — 0.8B ([LAB/0.8b.md](LAB/0.8b.md)) · 1.6B ([LAB/1.6b.md](LAB/1.6b.md))
+- 2026-07-09 — 🖼️ Per-step sample observations published — 0.8B ([LAB/0.8b_training_review.md](LAB/0.8b_training_review.md)) · 1.6B ([LAB/1.6b_training_review.md](LAB/1.6b_training_review.md))
 - 2026-07-08 — 📚 Latest paper review: [Gemma 4 Technical Report](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_Gemma-4.md)
 - 2026-07-02 — 🧪 LAB (experiment log) opened — SFT experiment & ops notes ([LAB/SFT.md](LAB/SFT.md))
 - 2026-06-16 — `beta-v2370` base 0.8b (v1) inference checkpoint released ([download ↓](#-checkpoints))
@@ -252,7 +252,7 @@ See `python -m PIERROT.sample --help` for all options.
 - [x] CLI / Python API inference pipeline
 - [x] Multi-reference input support (code only)
 - [x] Post-Training: SFT → 0.8b done → see [SFT.md](LAB/SFT.md)
-- [x] Per-step sample observations → see [0.8b.md](LAB/0.8b.md) · [1.6b.md](LAB/1.6b.md)
+- [x] Per-step sample observations → see [0.8b_training_review.md](LAB/0.8b_training_review.md) · [1.6b_training_review.md](LAB/1.6b_training_review.md)
 
 **In progress / planned**
 
