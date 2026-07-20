@@ -54,7 +54,7 @@
 
 ## 📰 News
 
-- 2026-07-20 — ⚖️ PRX 와 같은 프롬프트 20개 비교 관찰 공개 ([LAB/vs_prx.md](LAB/vs_prx.md))
+- 2026-07-20 — ⚖️ 0.8B·1.6B·PRX 3자 비교 관찰 공개 ([LAB/vs_prx.md](LAB/vs_prx.md))
 - 2026-07-15 — 📚 최신 논문 리뷰: [DAR: Rethinking Cross-Layer Information Routing in Diffusion Transformers](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_DAR.md)
 - 2026-07-09 — 🖼️ step별 샘플 관찰 기록 공개 — 0.8B ([LAB/0.8b_training_review.md](LAB/0.8b_training_review.md)) · 1.6B ([LAB/1.6b_training_review.md](LAB/1.6b_training_review.md))
 - 2026-07-02 — 🧪 LAB(실험 일기) 개설 — SFT 실험·운영 노트 공개 ([LAB/SFT.md](LAB/SFT.md))
