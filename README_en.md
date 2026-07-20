@@ -44,7 +44,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 
 ## 📰 News
 
-- 2026-07-20 — ⚖️ PIERROT 4 checkpoints vs PRX comparison ([LAB/vs_prx.md](LAB/vs_prx.md))
+- 2026-07-20 — ⚖️ PIERROT 10 checkpoints vs PRX — tracing when text-rendering emerges and wobbles ([LAB/vs_prx.md](LAB/vs_prx.md))
 - 2026-07-15 — 📚 Latest paper review: [DAR: Rethinking Cross-Layer Information Routing in Diffusion Transformers](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_DAR.md)
 - 2026-07-09 — 🖼️ Per-step sample observations published — 0.8B ([LAB/0.8b_training_review.md](LAB/0.8b_training_review.md)) · 1.6B ([LAB/1.6b_training_review.md](LAB/1.6b_training_review.md))
 - 2026-07-02 — 🧪 LAB (experiment log) opened — SFT experiment & ops notes ([LAB/SFT.md](LAB/SFT.md))
