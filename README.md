@@ -54,8 +54,8 @@
 
 ## 📰 News
 
-- 2026-07-20 — 🔤 장면 텍스트 학습셋 진단 공개 — 글자는 배웠지만 서체는 배우지 않았다 ([LAB/Round1/text_typography_probe.md](LAB/Round1/text_typography_probe.md))
 - 2026-07-20 — 📋 1차 실험 완료 보고 공개 — 다섯 트랙 결산과 2차 실험의 근거 ([LAB/Round1/round1_experiment_report.md](LAB/Round1/round1_experiment_report.md))
+- 2026-07-20 — 🔤 장면 텍스트 학습셋 진단 공개 — 글자는 배웠지만 서체는 배우지 않았다 ([LAB/Round1/text_typography_probe.md](LAB/Round1/text_typography_probe.md))
 - 2026-07-20 — 🔬 인물 학습셋 커버리지 진단 공개 — 평가 프롬프트 형식이 결과를 바꾼다 ([LAB/Round1/person_coverage_probe.md](LAB/Round1/person_coverage_probe.md))
 - 2026-07-20 — ⚖️ PIERROT 10개 체크포인트 vs PRX 비교 관찰 공개 — 텍스트 렌더링 능력의 획득·흔들림 곡선 ([LAB/Round1/vs_prx.md](LAB/Round1/vs_prx.md))
 - 2026-07-15 — 📚 최신 논문 리뷰: [DAR: Rethinking Cross-Layer Information Routing in Diffusion Transformers](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_DAR.md)
