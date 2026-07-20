@@ -1,0 +1,41 @@
+{
+  "name": "person_full_model coverage-gap probe prompts",
+  "version": "2026-07-20",
+  "note": "person_full_model 학습셋 6만 표본 어휘 분석에서 '비어 있거나 희소한' 축만 골라 작성. 학습 캡션 템플릿('a slim white woman with ... is wearing a regular ... with hip-length and a round neckline')과 의도적으로 다른 문장 형식을 쓴다.",
+  "training_set_distribution": {
+    "body": {"slim": "65.0%", "average-sized": "43.3%", "muscular": "4.0%",
+             "plus-size / curvy / petite / athletic / chubby": "0%"},
+    "ethnicity": {"white": "73.4%", "black": "67.8%", "hispanic-latino": "13.5%", "asian": "12.2%",
+                  "south-asian / middle-eastern": "0%"},
+    "tuck_style": {"untucked": "63.0%", "tucked": "16.1%", "rolled": "7.4%",
+                   "half-tucked / folded / cuffed": "0%"},
+    "garment": {"shirt": "50.0%", "t-shirt": "34.9%", "jeans": "28.6%", "pants": "27.2%",
+                "suit": "0.2%", "coat": "1.2%", "shorts": "0.005%"}
+  },
+  "prompts": [
+    {"id":  1, "axis": "body_plus",     "gap": "plus-size 0%",      "prompt": "Full-body studio photograph of a plus-size woman standing confidently, wearing a fitted emerald green midi dress, natural light, photorealistic"},
+    {"id":  2, "axis": "body_plus",     "gap": "plus-size 0%",      "prompt": "A heavyset man photographed head to toe in a charcoal wool overcoat over a cream turtleneck, city sidewalk background, full body shot"},
+    {"id":  3, "axis": "body_petite",   "gap": "petite 0%",         "prompt": "Full-body shot of a petite woman, small frame and short stature, in an oversized beige trench coat that reaches her ankles, studio backdrop"},
+    {"id":  4, "axis": "body_curvy",    "gap": "curvy 0%",          "prompt": "A curvy woman with an hourglass figure photographed full length in a red wrap dress and black ankle boots, soft studio lighting"},
+    {"id":  5, "axis": "body_athletic", "gap": "athletic 0%",       "prompt": "Full-body portrait of an athletic woman with broad shoulders and defined arms, wearing a navy sports tank and grey running shorts, gym interior"},
+    {"id":  6, "axis": "body_tall_thin","gap": "tall 희소",          "prompt": "A very tall lanky young man, long limbs, standing full body in a striped rugby shirt and cropped chinos, plain white background"},
+    {"id":  7, "axis": "eth_south_asian","gap": "south-asian 0%",   "prompt": "Full-body photograph of a South Asian woman with dark brown skin and long black hair, wearing a mustard yellow linen shirt tucked into wide-leg olive trousers"},
+    {"id":  8, "axis": "eth_south_asian","gap": "south-asian 0%",   "prompt": "An Indian man photographed head to toe in a light blue kurta over white cotton trousers and brown leather sandals, outdoor daylight"},
+    {"id":  9, "axis": "eth_middle_east","gap": "middle-eastern 0%","prompt": "Full-body studio shot of a Middle Eastern man with a short beard, wearing a sand-colored linen blazer over a white shirt and dark tapered trousers"},
+    {"id": 10, "axis": "eth_middle_east","gap": "middle-eastern 0%","prompt": "A Middle Eastern woman in a deep teal hijab and a long grey wool coat, photographed full length against a concrete wall"},
+    {"id": 11, "axis": "eth_east_asian","gap": "asian 12% (저노출)", "prompt": "Full-body photo of an East Asian man with black hair, wearing a boxy denim jacket over a black hoodie, loose grey sweatpants, white sneakers"},
+    {"id": 12, "axis": "eth_mixed",     "gap": "다인종 조합 없음",     "prompt": "Two women standing side by side, full body — one Black woman in a mustard jumpsuit, one East Asian woman in a white blouse and navy skirt"},
+    {"id": 13, "axis": "tuck_half",     "gap": "half-tucked 0%",    "prompt": "Full-body shot of a woman wearing a loose white oxford shirt half-tucked into high-waisted blue jeans, only the front hem tucked, casual pose"},
+    {"id": 14, "axis": "tuck_french",   "gap": "half-tucked 0%",    "prompt": "A man in a grey flannel shirt with just the front tucked into dark denim, the back left hanging loose, full body, plain studio background"},
+    {"id": 15, "axis": "cuff_rolled",   "gap": "cuffed 0%",         "prompt": "Full-body photograph of a woman in a pale blue linen shirt with sleeves rolled to the elbow and trouser hems cuffed twice above the ankle"},
+    {"id": 16, "axis": "fold_collar",   "gap": "folded 0%",         "prompt": "A man wearing a beige trench coat with the collar folded up and the belt tied at the waist, full body, overcast street"},
+    {"id": 17, "axis": "layered",       "gap": "layered 0.01%",     "prompt": "Full-body shot of a woman in three layers — a white tee under an open grey cardigan under a long black wool coat, with black wide-leg trousers"},
+    {"id": 18, "axis": "garment_suit",  "gap": "suit 0.2%",         "prompt": "A woman in a tailored double-breasted pinstripe suit with a crisp white shirt, photographed head to toe, studio lighting, photorealistic"},
+    {"id": 19, "axis": "garment_shorts","gap": "shorts 0.005%",     "prompt": "Full-body photo of a man in a short-sleeve camp collar shirt and tailored khaki shorts with leather loafers, summer daylight"},
+    {"id": 20, "axis": "garment_coat",  "gap": "coat 1.2%",         "prompt": "A woman in a long camel double-faced wool coat left open over a burgundy knit dress, full body, winter street"},
+    {"id": 21, "axis": "attr_texture",  "gap": "소재 조합 희소",       "prompt": "Full-body studio shot of a man wearing a chunky cable-knit oatmeal sweater and glossy black leather trousers, contrasting textures"},
+    {"id": 22, "axis": "attr_pattern",  "gap": "패턴 조합 희소",       "prompt": "A woman in a floral print silk blouse tucked into a checkered wool midi skirt, mixing two patterns, full body, neutral background"},
+    {"id": 23, "axis": "attr_color",    "gap": "고채도 조합 희소",     "prompt": "Full-body photograph of a person in a bright orange puffer jacket, lime green track pants and white chunky sneakers, bold color blocking"},
+    {"id": 24, "axis": "pose_back",     "gap": "정면 위주",           "prompt": "Full-body shot of a woman photographed from behind, showing the back of a cropped denim jacket and the drape of a long pleated skirt"}
+  ]
+}
