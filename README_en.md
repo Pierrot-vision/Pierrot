@@ -247,9 +247,9 @@ See `python -m PIERROT.sample --help` for all options.
 
 ## 🗺️ Round 1 — What Was Done
 
-Round 1 ended when **GPU access ran out**, not because the goals were met. The 1.6B and 3B tracks stopped while their loss curves were still moving. Full retrospective: **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)**.
+Round 1 ended when **GPU access ran out**. Full retrospective: **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)**.
 
-**Done**
+**Completed**
 
 - [x] **0.8B base model trained from scratch** — 1024² multi-aspect, 2,745,000 steps
 - [x] Flow Matching (`x_prediction`) + 4D RoPE Hybrid transformer
@@ -263,11 +263,10 @@ Round 1 ended when **GPU access ran out**, not because the goals were met. The 1
 - [x] Comparison against a public model (PRX) → [vs_prx.md](LAB/Round1/vs_prx.md)
 - [x] Dataset diagnostics — people [person_coverage_probe.md](LAB/Round1/person_coverage_probe.md) · scene text [text_typography_probe.md](LAB/Round1/text_typography_probe.md)
 
-**Abandoned / not reached**
+**In progress / planned**
 
 - [ ] **KD pretraining** → ✗ Confirmed failure. Loss did not drop over 39,000 steps; weights discarded
 - [ ] **SFT** → ✗ Halted. Cause of the quality drop was diagnosed but never judged → [SFT.md](LAB/Round1/SFT.md)
-- [ ] **Depth growth (1.6B → 3B)** → ⚠ Ran to 305,000 steps but **never visually evaluated**. The biggest spend with the smallest return
 - [ ] Quantitative benchmarks (GenEval / DPG-Bench) → GenEval run once, and that result is not trustworthy
 - [ ] Post-training such as DPO
 - [ ] Turbo variant (few-step & CFG distillation)

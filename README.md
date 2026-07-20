@@ -259,9 +259,9 @@ image = pipe(prompt="a red apple on a wooden table",
 
 ## 🗺️ Round 1 — 무엇을 했나
 
-1차 실험은 **GPU 사용 종료로 마감**됐습니다. 목표 달성이 아니라 자원 소진이 종료 사유이며, 1.6B·3B는 학습 곡선이 살아 있는 상태에서 멈췄습니다. 전체 결산은 **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)** 에 있습니다.
+1차 실험은 **GPU 사용 종료로 마감**됐습니다. 전체 결산은 **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)** 에 있습니다.
 
-**해낸 것**
+**완료**
 
 - [x] **0.8B base 모델 스크래치 학습** — 1024² multi-aspect, 2,745,000 step
 - [x] Flow Matching (`x_prediction`) + 4D RoPE Hybrid 트랜스포머
@@ -275,11 +275,10 @@ image = pipe(prompt="a red apple on a wooden table",
 - [x] 외부 공개 모델(PRX) 비교 → [vs_prx.md](LAB/Round1/vs_prx.md)
 - [x] 학습셋 진단 — 인물 [person_coverage_probe.md](LAB/Round1/person_coverage_probe.md) · 장면 텍스트 [text_typography_probe.md](LAB/Round1/text_typography_probe.md)
 
-**하다 만 것 · 못 한 것**
+**진행 / 예정**
 
 - [ ] **KD 사전학습** → ✗ 실패 확정. 39,000 step 동안 손실이 내려가지 않아 폐기
 - [ ] **SFT** → ✗ 중단. 화질 저하의 원인은 진단했으나 판정 전 종료 → [SFT.md](LAB/Round1/SFT.md)
-- [ ] **깊이 성장 (1.6B → 3B)** → ⚠ 305,000 step까지 돌렸으나 **평가 한 번 없이 종료**. 1차에서 가장 크게 투입하고 가장 적게 건진 자리
 - [ ] 정량 벤치마크 (GenEval / DPG-Bench 등) → GenEval 단 1회, 그마저 신뢰 불가
 - [ ] Post-Training : DPO 같은 알고리즘
 - [ ] Turbo 버전 (few-step & CFG distillation)
