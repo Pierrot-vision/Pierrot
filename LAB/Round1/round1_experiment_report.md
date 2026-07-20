@@ -111,4 +111,5 @@ phase4 손실 정체의 원인 후보는 세 갈래이며 구분되지 않았다
 - [SFT.md](SFT.md) — SFT 실험 일지
 - [vs_prx.md](vs_prx.md) — PRX 20개 프롬프트 비교
 - [person_coverage_probe.md](person_coverage_probe.md) — 인물 학습셋의 빈 구멍 진단 (체형·인종·착장 스타일)
+- [text_typography_probe.md](text_typography_probe.md) — 장면 텍스트 학습셋 진단 (서체 제어 부재)
 - [baseprior_prompts.json](../baseprior_prompts.json) / [fine_t2i_prompts.json](../fine_t2i_prompts.json) / [vs_prx_prompts.json](../vs_prx_prompts.json) — 평가 프롬프트 전문

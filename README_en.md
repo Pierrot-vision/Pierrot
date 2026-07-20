@@ -44,6 +44,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 
 ## 📰 News
 
+- 2026-07-20 — 🔤 Scene-text dataset probe — the model learned letters but never typefaces ([LAB/Round1/text_typography_probe.md](LAB/Round1/text_typography_probe.md))
 - 2026-07-20 — 📋 Round-1 experiment report published — five-track retrospective and rationale for round 2 ([LAB/Round1/round1_experiment_report.md](LAB/Round1/round1_experiment_report.md))
 - 2026-07-20 — 🔬 Person-dataset coverage probe — prompt format changes what the model appears capable of ([LAB/Round1/person_coverage_probe.md](LAB/Round1/person_coverage_probe.md))
 - 2026-07-20 — ⚖️ PIERROT 10 checkpoints vs PRX — tracing when text-rendering emerges and wobbles ([LAB/Round1/vs_prx.md](LAB/Round1/vs_prx.md))

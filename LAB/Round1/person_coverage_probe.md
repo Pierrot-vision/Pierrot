@@ -89,6 +89,7 @@ and {액세서리}, with his/her top {tuck}.
 
 ## 6. 관련 문서
 
+- [text_typography_probe.md](text_typography_probe.md) — 같은 형식의 장면 텍스트 학습셋 진단
 - [round1_experiment_report.md](round1_experiment_report.md) — 1차 실험 결산 (3절 학습셋 문제, 6절 2라운드 계획)
 - [1.6b_training_review.md](1.6b_training_review.md) — 이 프로브에 쓴 1.6B 모델의 step별 관찰
 - [pfm_probe_prompts.json](../pfm_probe_prompts.json) — 프롬프트 24개 전문 + 템플릿 정의

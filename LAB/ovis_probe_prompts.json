@@ -1,0 +1,38 @@
+{
+  "name": "ovis_image_text_synth coverage probe — typography axis",
+  "version": "2026-07-20",
+  "note": "학습 캡션 템플릿(A {장면} with the exact visible text \"{텍스트}\".)을 따르되, 학습셋에 없는 것만 넣었다. (1) 폰트·서체 서술 — 학습셋 0% (2) 신규 텍스트 — 학습셋 106개 단어와 미충돌 (3) 신규 장면 — 학습셋 9종 밖.",
+  "training_set": {
+    "unique_quoted_strings": 238,
+    "unique_words": 106,
+    "top_texts": {"PIERROT": "38.2%", "GALLERY": "20.5%", "CLASSIC": "8.6%", "MAGAZINE": "7.8%", "NEW ARRIVAL": "4.9%"},
+    "scene_types": 9,
+    "typography_vocabulary": {"font": "0%", "serif": "0%", "sans-serif": "0%", "typeface": "0%", "italic": "0%", "script": "0%", "handwritten": "0%", "calligraphy": "0%", "chrome": "0%", "gradient": "0%", "outlined": "0%", "condensed": "0%", "bold": "0.47%"}
+  },
+  "prompts": [
+    {"id":  1, "axis": "font_serif",      "text": "HARBOR",     "prompt": "A letterpress print on cream paper with the exact visible text \"HARBOR\" set in a high-contrast serif typeface."},
+    {"id":  2, "axis": "font_sans",       "text": "ZENITH",     "prompt": "An enamel sign on a tiled wall with the exact visible text \"ZENITH\" set in a geometric sans-serif typeface."},
+    {"id":  3, "axis": "font_script",     "text": "Rosemary",   "prompt": "A bakery window decal with the exact visible text \"Rosemary\" written in flowing script lettering."},
+    {"id":  4, "axis": "font_handwrite",  "text": "thank you",  "prompt": "A folded notecard on linen with the exact visible text \"thank you\" in loose handwritten lowercase."},
+    {"id":  5, "axis": "font_calligraphy","text": "VELVET",     "prompt": "A wedding invitation on textured card with the exact visible text \"VELVET\" in ornate calligraphy."},
+    {"id":  6, "axis": "font_blackletter","text": "IRONSIDE",   "prompt": "A brewery label on a dark bottle with the exact visible text \"IRONSIDE\" in blackletter gothic type."},
+    {"id":  7, "axis": "font_condensed",  "text": "DEPARTURE",  "prompt": "A railway platform board with the exact visible text \"DEPARTURE\" in tall condensed uppercase letters."},
+    {"id":  8, "axis": "font_monospace",  "text": "SYS_READY",  "prompt": "A terminal screen on a beige computer with the exact visible text \"SYS_READY\" in green monospace type."},
+    {"id":  9, "axis": "font_stencil",    "text": "CARGO 47",   "prompt": "A wooden crate side with the exact visible text \"CARGO 47\" spray-painted through a stencil."},
+    {"id": 10, "axis": "font_pixel",      "text": "LEVEL UP",   "prompt": "A retro arcade cabinet screen with the exact visible text \"LEVEL UP\" in blocky pixel font."},
+    {"id": 11, "axis": "font_bubble",     "text": "Splash",     "prompt": "A pool float tag with the exact visible text \"Splash\" in rounded bubble lettering."},
+    {"id": 12, "axis": "font_italic",     "text": "Andante",    "prompt": "A sheet music cover with the exact visible text \"Andante\" in slanted italic serif."},
+    {"id": 13, "axis": "style_chrome",    "text": "OVERDRIVE",  "prompt": "A car badge on a black hood with the exact visible text \"OVERDRIVE\" in polished chrome lettering."},
+    {"id": 14, "axis": "style_gradient",  "text": "SUNSET FM",  "prompt": "A vinyl record sleeve with the exact visible text \"SUNSET FM\" in a pink to orange gradient fill."},
+    {"id": 15, "axis": "style_outline",   "text": "HOLLOW",     "prompt": "A skate deck underside with the exact visible text \"HOLLOW\" in outlined letters with no fill."},
+    {"id": 16, "axis": "style_embossed",  "text": "ATELIER",    "prompt": "A leather notebook cover with the exact visible text \"ATELIER\" embossed and debossed into the surface."},
+    {"id": 17, "axis": "style_embroidery","text": "SUMMIT",     "prompt": "A canvas cap front with the exact visible text \"SUMMIT\" stitched in raised embroidery thread."},
+    {"id": 18, "axis": "style_carved",    "text": "WOODLAND",   "prompt": "A carved wooden trail marker with the exact visible text \"WOODLAND\" cut into the grain."},
+    {"id": 19, "axis": "case_mixed",      "text": "BrightSide", "prompt": "A ceramic mug on a shelf with the exact visible text \"BrightSide\" in mixed upper and lower case."},
+    {"id": 20, "axis": "text_long",       "text": "MIDNIGHT EXPRESS", "prompt": "A cinema marquee at dusk with the exact visible text \"MIDNIGHT EXPRESS\" in bold backlit letters."},
+    {"id": 21, "axis": "text_numeric",    "text": "EST. 1968",  "prompt": "A barbershop mirror decal with the exact visible text \"EST. 1968\" in gold leaf lettering."},
+    {"id": 22, "axis": "text_two_lines",  "text": "FIELD / NOTES", "prompt": "A field journal cover with the exact visible text \"FIELD\" above the exact visible text \"NOTES\" in two stacked lines."},
+    {"id": 23, "axis": "scene_new",       "text": "PLATFORM 9",  "prompt": "A subway tile mosaic with the exact visible text \"PLATFORM 9\" laid in ceramic tiles."},
+    {"id": 24, "axis": "scene_new",       "text": "ORCHARD",     "prompt": "A fruit crate stamp on raw wood with the exact visible text \"ORCHARD\" in faded ink."}
+  ]
+}
