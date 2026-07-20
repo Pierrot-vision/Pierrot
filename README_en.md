@@ -275,13 +275,6 @@ Round 1 ended when **GPU access ran out**, not because the goals were met. The 1
 - [ ] Next-generation algorithms → implemented but never run, for lack of compute
 - [ ] LoRA
 
-**What Round 1 taught (the basis for Round 2)**
-
-- Depth growth works — the scale-up path itself is sound
-- The painterly drift and the failure to render motion came from **the data, not the model** (both model sizes traced the same curve)
-- Skipping progressive resolution (256→512→1024) was the largest waste of budget
-- **Dataset composition is everything** — see sections 5 and 6 of the [retrospective](LAB/Round1/round1_experiment_report.md)
-
 ## 🤗 Reference
 
 - PIERROT is built by reproducing and recombining the strengths of existing research.
