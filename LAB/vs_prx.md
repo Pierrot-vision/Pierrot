@@ -61,31 +61,50 @@ CFG만 다르다. 각 모델이 **자기 권장값에서 가장 잘 나오도록
 
 ## 3. 결과
 
-각 시트는 **위부터 PRX / 0.8B 2.5M / 0.8B 2.745M / 1.6B 800k / 1.6B 930k** 다섯 줄이다. 같은 열이 같은 프롬프트다.
+각 시트는 다섯 줄이고, **각 줄 왼쪽에 어느 모델인지 라벨이 붙어 있다.** 같은 열은 같은 프롬프트다.
+
+| 줄 | 라벨 | 모델 |
+| --- | --- | --- |
+| 1 | `PRX beta` | PRX `prx-1024-t2i-beta` |
+| 2 | `0.8B 2.50M` | PIERROT 0.8B · phase2 step 2,500,000 |
+| 3 | `0.8B 2.745M` | PIERROT 0.8B · phase2 step 2,745,000 |
+| 4 | `1.6B 800k` | PIERROT 1.6B · phase3 step 800,000 |
+| 5 | `1.6B 930k` | PIERROT 1.6B · phase3 step 930,000 |
+
+2·3번 줄이 0.8B의 두 시점, 4·5번 줄이 1.6B의 두 시점이다. **가로로 읽으면 모델 간 비교, 세로로 읽으면 학습 진행에 따른 변화**가 된다.
+
+> **비교 대상은 단계적으로 늘려 왔고, 각 단계의 시트를 모두 남겨 두었다.** 나중에 어느 시점의 비교였는지 되짚을 수 있게 하기 위함이다.
+>
+> | 단계 | 파일 | 구성 |
+> | --- | --- | --- |
+> | 2모델 | `vs_prx_sheetN_2models_20260720.jpg` | PRX / 1.6B 930k |
+> | 3모델 | `vs_prx_sheetN_3models_20260720.jpg` | + 0.8B 2.745M |
+> | 4모델 | `vs_prx_sheetN_4models_20260720.jpg` | + 0.8B 2.5M |
+> | **5모델** | `vs_prx_sheetN_5models_20260720.jpg` | + 1.6B 800k **(아래 게재본)** |
 
 ### 3.1 인물 · 손 · 개수 · 공간 (id 1–4)
 
-![PRX vs PIERROT 4 checkpoints 1](../docs/vs_prx_sheet1_20260720.jpg)
+![PRX vs PIERROT 4 checkpoints 1](../docs/vs_prx_sheet1_5models_20260720.jpg)
 
 
 ### 3.2 속성 결합 · 텍스트 · 정물 (id 5–8)
 
-![PRX vs PIERROT 4 checkpoints 2](../docs/vs_prx_sheet2_20260720.jpg)
+![PRX vs PIERROT 4 checkpoints 2](../docs/vs_prx_sheet2_5models_20260720.jpg)
 
 
 ### 3.3 투명 · 반사 · 야간 · 모션 (id 9–12)
 
-![PRX vs PIERROT 4 checkpoints 3](../docs/vs_prx_sheet3_20260720.jpg)
+![PRX vs PIERROT 4 checkpoints 3](../docs/vs_prx_sheet3_5models_20260720.jpg)
 
 
 ### 3.4 군중 · 건축 · 음식 · 차량 (id 13–16)
 
-![PRX vs PIERROT 4 checkpoints 4](../docs/vs_prx_sheet4_20260720.jpg)
+![PRX vs PIERROT 4 checkpoints 4](../docs/vs_prx_sheet4_5models_20260720.jpg)
 
 
 ### 3.5 일러스트 · 애니 · SF · 매크로 (id 17–20)
 
-![PRX vs PIERROT 4 checkpoints 5](../docs/vs_prx_sheet5_20260720.jpg)
+![PRX vs PIERROT 4 checkpoints 5](../docs/vs_prx_sheet5_5models_20260720.jpg)
 
 
 ## 4. 공정성 한계 — 반드시 같이 읽을 것
