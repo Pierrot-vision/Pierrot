@@ -39,8 +39,6 @@ with {기장} and a {넥라인}, {하의}, {신발} with a {토} and a {힐},
 and {액세서리}, with his/her top {tuck}.
 ```
 
-학습 캡션에는 **배경 서술이 아예 없으므로**(전부 흰 스튜디오) 프롬프트에도 배경을 쓰지 않았다. 이렇게 하면 프롬프트마다 **재려는 슬롯 하나만** 분포를 벗어나, 실패했을 때 원인이 섞이지 않는다.
-
 전문은 [pfm_probe_prompts.json](../pfm_probe_prompts.json)에 있다.
 
 | 항목 | 값 |
