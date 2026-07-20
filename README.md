@@ -54,6 +54,7 @@
 
 ## 📰 News
 
+- 2026-07-20 — 📋 1차 실험 완료 보고 공개 — 다섯 트랙 결산과 2차 실험의 근거 ([LAB/round1_experiment_report.md](LAB/round1_experiment_report.md))
 - 2026-07-20 — ⚖️ PIERROT 10개 체크포인트 vs PRX 비교 관찰 공개 — 텍스트 렌더링 능력의 획득·흔들림 곡선 ([LAB/vs_prx.md](LAB/vs_prx.md))
 - 2026-07-15 — 📚 최신 논문 리뷰: [DAR: Rethinking Cross-Layer Information Routing in Diffusion Transformers](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_DAR.md)
 - 2026-07-09 — 🖼️ step별 샘플 관찰 기록 공개 — 0.8B ([LAB/0.8b_training_review.md](LAB/0.8b_training_review.md)) · 1.6B ([LAB/1.6b_training_review.md](LAB/1.6b_training_review.md))
