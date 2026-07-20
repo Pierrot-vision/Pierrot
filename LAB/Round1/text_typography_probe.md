@@ -70,15 +70,11 @@ LongCat 방식은 **따옴표 안에 있는 텍스트만 골라 글자 단위로
 
 두 가지를 따로 봐야 한다 — **철자가 맞았는가**와 **요청한 서체로 나왔는가**.
 
-| 항목 | 결과 |
-| --- | --- |
-| **철자** | 24개 중 **12개 정확** (HARBOR · Rosemary · VELVET · CARGO 47 · Splash · Andante · HOLLOW · SUNSET FM · FIELD/NOTES · MIDNIGHT EXPRESS 등) |
-| 철자 오류 유형 | **글자 누락**이 대부분 — `ZENIH`(T), `IRONSDE`(I), `DEPRTURE`(A), `ATELER`(I), `ORHARD`(C), `MIDNGHT`(I) |
-| 심한 붕괴 | `thank you`→`tihark`, `SYS_READY`→`SYS =ADU`, `LEVEL UP`→`LEVEL EVEP UPP`, `WOODLAND`→`WODLAD`, `BrightSide`→`BPigSHide`, `EST. 1968`→`ESTC 1968` |
-| **서체** | **거의 전부 실패.** serif를 요청한 HARBOR가 산세리프로, calligraphy를 요청한 VELVET이 평범한 세리프로, italic을 요청한 Andante가 직립으로 나왔다. blackletter · condensed · pixel · stencil도 반영되지 않았다 |
-| 서체 부분 성공 | script(Rosemary) · handwritten(글자는 틀렸으나 필기체 질감) · bubble(Splash)만 어렴풋이 반영 |
-| 표현 방식 | emboss(ATELIER) · embroidery(SUMMIT) · 네온(MIDNIGHT EXPRESS) · 금박(EST. 1968)은 **재질 표현이 살아 있다**. chrome · gradient · outline은 약함 |
-| 배치 | 2행 배치(FIELD / NOTES)는 성공. 숫자(CARGO 47 · PLATFORM 9)도 형태는 나오나 `9`가 두 번 찍혔다 |
+**철자는 24개 중 12개 정확했다.** 오류는 대부분 글자 하나 누락(`ZENIH`·`IRONSDE`·`DEPRTURE`)이고, 아예 읽을 수 없게 무너진 것도 몇 개 있다.
+
+**서체는 거의 전부 실패했다.** serif·calligraphy·italic·blackletter·condensed·pixel·stencil 어느 것도 반영되지 않고, 대부분 학습셋에서 가장 흔한 굵은 산세리프로 되돌아갔다. script·handwritten·bubble만 어렴풋이 반영됐다.
+
+**다만 재질 표현은 살아 있다.** 양각·자수·네온·금박은 요청대로 나왔다. 이것은 서체가 아니라 장면·재질의 속성이고, 학습셋 장면에 유사한 것이 있었기 때문으로 보인다.
 
 ## 3. 정리 — 2라운드 데이터에 주는 함의
 
