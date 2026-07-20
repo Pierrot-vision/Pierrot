@@ -247,7 +247,7 @@ See `python -m PIERROT.sample --help` for all options.
 
 ## 🗺️ Round 1 — What Was Done
 
-Round 1 ended when **GPU access ran out**. Full retrospective: **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)**.
+Full retrospective: **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)**.
 
 **Completed**
 

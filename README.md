@@ -259,7 +259,7 @@ image = pipe(prompt="a red apple on a wooden table",
 
 ## 🗺️ Round 1 — 무엇을 했나
 
-1차 실험은 **GPU 사용 종료로 마감**됐습니다. 전체 결산은 **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)** 에 있습니다.
+전체 결산은 **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)** 에 있습니다.
 
 **완료**
 
