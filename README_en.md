@@ -259,9 +259,6 @@ Round 1 ended when **GPU access ran out**. Full retrospective: **[round1_experim
 - [x] CLI / Python API inference pipeline
 - [x] Multi-reference input support (code only)
 - [x] Checkpoint release
-- [x] Per-step sample observations → [0.8b_training_review.md](LAB/Round1/0.8b_training_review.md) · [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md)
-- [x] Comparison against a public model (PRX) → [vs_prx.md](LAB/Round1/vs_prx.md)
-- [x] Dataset diagnostics — people [person_coverage_probe.md](LAB/Round1/person_coverage_probe.md) · scene text [text_typography_probe.md](LAB/Round1/text_typography_probe.md)
 
 **In progress / planned**
 

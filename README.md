@@ -271,9 +271,6 @@ image = pipe(prompt="a red apple on a wooden table",
 - [x] CLI / Python API 추론 파이프라인
 - [x] 다중 참조(multi-reference) 입력 지원 → 코드만 완료
 - [x] 체크포인트 공개
-- [x] step별 샘플 관찰 기록 → [0.8b_training_review.md](LAB/Round1/0.8b_training_review.md) · [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md)
-- [x] 외부 공개 모델(PRX) 비교 → [vs_prx.md](LAB/Round1/vs_prx.md)
-- [x] 학습셋 진단 — 인물 [person_coverage_probe.md](LAB/Round1/person_coverage_probe.md) · 장면 텍스트 [text_typography_probe.md](LAB/Round1/text_typography_probe.md)
 
 **진행 / 예정**
 
