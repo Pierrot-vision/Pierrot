@@ -1,0 +1,27 @@
+{
+  "name": "PRX vs PIERROT phase3 comparison prompts",
+  "version": "2026-07-20",
+  "note": "기존 baseprior 60 / infer.sh 배터리와 겹치지 않는 신규 프롬프트. 능력 축별 20개.",
+  "prompts": [
+    {"id":  1, "axis": "portrait",        "prompt": "a close-up portrait of an elderly fisherman with a weathered face and white stubble, wearing a knitted wool cap, soft window light, shallow depth of field, photorealistic"},
+    {"id":  2, "axis": "hands_anatomy",   "prompt": "a potter's hands shaping wet clay on a spinning wheel, clay smeared across the fingers, workshop background, close-up, photorealistic"},
+    {"id":  3, "axis": "counting",        "prompt": "exactly three yellow rubber ducks lined up in a row on a white bathroom tile floor, even lighting, product photography"},
+    {"id":  4, "axis": "spatial",         "prompt": "a black cat sleeping on top of a stack of books, with a green watering can to the left of the books and a small globe to the right"},
+    {"id":  5, "axis": "attr_binding",    "prompt": "a woman in a yellow raincoat holding a blue umbrella, standing next to a man in a green sweater holding a red thermos, on a rainy sidewalk"},
+    {"id":  6, "axis": "text_render",     "prompt": "a rustic wooden bakery sign hanging above a shop door with the exact visible text \"MORNING LOAF\" carved and painted in cream letters"},
+    {"id":  7, "axis": "text_render",     "prompt": "a white ceramic coffee mug on a desk with the exact visible text \"DEEP WORK\" printed in small black sans-serif letters"},
+    {"id":  8, "axis": "still_life",      "prompt": "a cut geode crystal on a dark slate surface, purple interior crystals catching a single directional light, macro photography, sharp focus"},
+    {"id":  9, "axis": "transparency",    "prompt": "a tall glass of iced lemon tea with condensation on the outside, ice cubes and a lemon slice visible through the glass, backlit on a sunny windowsill"},
+    {"id": 10, "axis": "reflection",      "prompt": "a still mountain lake at dusk perfectly mirroring the pine ridge and pink clouds above, a wooden canoe drifting near the shore"},
+    {"id": 11, "axis": "night_lowlight",  "prompt": "a lone night bus stop under a flickering streetlamp in heavy rain, wet asphalt reflecting the amber light, empty street, cinematic"},
+    {"id": 12, "axis": "motion",          "prompt": "a border collie mid-leap catching a frisbee over a grassy field, motion frozen, dirt and grass flying, sports photography, fast shutter"},
+    {"id": 13, "axis": "crowd_scene",     "prompt": "a crowded morning subway platform with commuters waiting behind the yellow line, a train arriving with motion blur, overhead fluorescent lighting"},
+    {"id": 14, "axis": "architecture",    "prompt": "the interior of a modern concrete chapel with a single narrow skylight casting a beam onto a stone altar, minimalist, wide angle"},
+    {"id": 15, "axis": "food",            "prompt": "a bowl of ramen with a soft-boiled egg halved on top, nori, scallions and chashu, steam rising, dark moody food photography, overhead shot"},
+    {"id": 16, "axis": "vehicle",         "prompt": "a weathered orange rally car mid-drift on a gravel forest road, dust cloud behind, spectators blurred at the treeline"},
+    {"id": 17, "axis": "illustration",    "prompt": "a children's storybook illustration of a hedgehog wearing a scarf reading under a mushroom, soft watercolor washes, warm autumn palette"},
+    {"id": 18, "axis": "anime_style",     "prompt": "anime style illustration of a schoolgirl standing on a rooftop at sunset, wind blowing her hair and skirt, clean cel shading, vibrant sky"},
+    {"id": 19, "axis": "scifi_concept",   "prompt": "a derelict generation ship interior overgrown with alien moss, broken viewport showing a ringed planet, volumetric light, concept art"},
+    {"id": 20, "axis": "macro_texture",   "prompt": "extreme macro of a monarch butterfly wing showing individual orange and black scales, soft gradient background, studio lighting"}
+  ]
+}
