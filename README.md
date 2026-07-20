@@ -54,11 +54,11 @@
 
 ## 📰 News
 
-- 2026-07-20 — 📋 1차 실험 완료 보고 공개 — 다섯 트랙 결산과 2차 실험의 근거 ([LAB/round1_experiment_report.md](LAB/round1_experiment_report.md))
-- 2026-07-20 — ⚖️ PIERROT 10개 체크포인트 vs PRX 비교 관찰 공개 — 텍스트 렌더링 능력의 획득·흔들림 곡선 ([LAB/vs_prx.md](LAB/vs_prx.md))
+- 2026-07-20 — 📋 1차 실험 완료 보고 공개 — 다섯 트랙 결산과 2차 실험의 근거 ([LAB/round1_experiment_report.md](LAB/Round1/round1_experiment_report.md))
+- 2026-07-20 — ⚖️ PIERROT 10개 체크포인트 vs PRX 비교 관찰 공개 — 텍스트 렌더링 능력의 획득·흔들림 곡선 ([LAB/vs_prx.md](LAB/Round1/vs_prx.md))
 - 2026-07-15 — 📚 최신 논문 리뷰: [DAR: Rethinking Cross-Layer Information Routing in Diffusion Transformers](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_DAR.md)
-- 2026-07-09 — 🖼️ step별 샘플 관찰 기록 공개 — 0.8B ([LAB/0.8b_training_review.md](LAB/0.8b_training_review.md)) · 1.6B ([LAB/1.6b_training_review.md](LAB/1.6b_training_review.md))
-- 2026-07-02 — 🧪 LAB(실험 일기) 개설 — SFT 실험·운영 노트 공개 ([LAB/SFT.md](LAB/SFT.md))
+- 2026-07-09 — 🖼️ step별 샘플 관찰 기록 공개 — 0.8B ([LAB/0.8b_training_review.md](LAB/Round1/0.8b_training_review.md)) · 1.6B ([LAB/1.6b_training_review.md](LAB/Round1/1.6b_training_review.md))
+- 2026-07-02 — 🧪 LAB(실험 일기) 개설 — SFT 실험·운영 노트 공개 ([LAB/SFT.md](LAB/Round1/SFT.md))
 - 2026-06-16 — beta-v2370:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
 - 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + CC BY-NC-SA 4.0)
 
@@ -266,8 +266,8 @@ image = pipe(prompt="a red apple on a wooden table",
 - [x] CLI / Python API 추론 파이프라인
 - [x] 다중 참조(multi-reference) 입력 지원 → 코드만 완료
 - [x] 체크포인트 공개
-- [x] Post-Training : SFT → 0.8b 완료 → [SFT.md](LAB/SFT.md) 참조
-- [x] step별 샘플 관찰 기록 → [0.8b_training_review.md](LAB/0.8b_training_review.md) · [1.6b_training_review.md](LAB/1.6b_training_review.md) 참조
+- [x] Post-Training : SFT → 0.8b 완료 → [SFT.md](LAB/Round1/SFT.md) 참조
+- [x] step별 샘플 관찰 기록 → [0.8b_training_review.md](LAB/Round1/0.8b_training_review.md) · [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md) 참조
 
 **진행 / 예정**
 
