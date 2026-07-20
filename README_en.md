@@ -245,29 +245,42 @@ See `python -m PIERROT.sample --help` for all options.
 | **HumanCaption-10M** | [OpenFace-CQUPT/HumanCaption-10M](https://huggingface.co/datasets/OpenFace-CQUPT/HumanCaption-10M) | ~0.75M | human-scene prior |
 | **DeepFashion-MultiModal** | [yumingj/DeepFashion-MultiModal](https://github.com/yumingj/DeepFashion-MultiModal) | 12.7K | full-body fashion prior |
 
-## 🗺️ Roadmap (To-Do)
+## 🗺️ Round 1 — What Was Done
+
+Round 1 ended when **GPU access ran out**, not because the goals were met. The 1.6B and 3B tracks stopped while their loss curves were still moving. Full retrospective: **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)**.
 
 **Done**
 
-- [x] 0.8B base model training — 1024² multi-aspect
+- [x] **0.8B base model trained from scratch** — 1024² multi-aspect, 2,745,000 steps
 - [x] Flow Matching (`x_prediction`) + 4D RoPE Hybrid transformer
 - [x] Base pretraining on public datasets
+- [x] **Depth growth (0.8B → 1.6B)** — 16→33 layers, 930,000 steps. **Confirmed working**: samples collapsed right after expansion and recovered within 50k steps → [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md)
 - [x] Inference-only package split — zero training dependencies
 - [x] CLI / Python API inference pipeline
 - [x] Multi-reference input support (code only)
-- [x] Post-Training: SFT → 0.8b done → see [SFT.md](LAB/Round1/SFT.md)
-- [x] Per-step sample observations → see [0.8b_training_review.md](LAB/Round1/0.8b_training_review.md) · [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md)
+- [x] Checkpoint release
+- [x] Per-step sample observations → [0.8b_training_review.md](LAB/Round1/0.8b_training_review.md) · [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md)
+- [x] Comparison against a public model (PRX) → [vs_prx.md](LAB/Round1/vs_prx.md)
+- [x] Dataset diagnostics — people [person_coverage_probe.md](LAB/Round1/person_coverage_probe.md) · scene text [text_typography_probe.md](LAB/Round1/text_typography_probe.md)
 
-**In progress / planned**
+**Abandoned / not reached**
 
-- [ ] Post-Training: algorithms like DPO
-- [ ] Depth-growth scale-up (→ 1.6B) → training in progress
-- [ ] Depth-growth scale-up (→ 3.2B) → planned
-- [ ] Turbo version — few-step & CFG distillation
-- [ ] Quantitative benchmarks (GenEval / DPG-Bench, etc.)
-- [ ] Edit model → planned for domain-specific use
-- [ ] Next (new-algorithm) model → code done → not run (resource-limited)
-- [ ] Add LoRA models
+- [ ] **KD pretraining** → ✗ Confirmed failure. Loss did not drop over 39,000 steps; weights discarded
+- [ ] **SFT** → ✗ Halted. Cause of the quality drop was diagnosed but never judged → [SFT.md](LAB/Round1/SFT.md)
+- [ ] **Depth growth (1.6B → 3B)** → ⚠ Ran to 305,000 steps but **never visually evaluated**. The biggest spend with the smallest return
+- [ ] Quantitative benchmarks (GenEval / DPG-Bench) → GenEval run once, and that result is not trustworthy
+- [ ] Post-training such as DPO
+- [ ] Turbo variant (few-step & CFG distillation)
+- [ ] Edit model (domain-specific)
+- [ ] Next-generation algorithms → implemented but never run, for lack of compute
+- [ ] LoRA
+
+**What Round 1 taught (the basis for Round 2)**
+
+- Depth growth works — the scale-up path itself is sound
+- The painterly drift and the failure to render motion came from **the data, not the model** (both model sizes traced the same curve)
+- Skipping progressive resolution (256→512→1024) was the largest waste of budget
+- **Dataset composition is everything** — see sections 5 and 6 of the [retrospective](LAB/Round1/round1_experiment_report.md)
 
 ## 🤗 Reference
 

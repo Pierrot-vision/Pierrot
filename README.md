@@ -257,30 +257,42 @@ image = pipe(prompt="a red apple on a wooden table",
 
 
 
-## 🗺️ 로드맵 (To-Do)
+## 🗺️ Round 1 — 무엇을 했나
 
-**완료**
+1차 실험은 **GPU 사용 종료로 마감**됐습니다. 목표 달성이 아니라 자원 소진이 종료 사유이며, 1.6B·3B는 학습 곡선이 살아 있는 상태에서 멈췄습니다. 전체 결산은 **[round1_experiment_report.md](LAB/Round1/round1_experiment_report.md)** 에 있습니다.
 
-- [x] 0.8B base 모델 학습 — 1024² multi-aspect
+**해낸 것**
+
+- [x] **0.8B base 모델 스크래치 학습** — 1024² multi-aspect, 2,745,000 step
 - [x] Flow Matching (`x_prediction`) + 4D RoPE Hybrid 트랜스포머
 - [x] 공개 데이터셋 기반 base 사전학습
+- [x] **깊이 성장 (0.8B → 1.6B)** — 레이어 16→33장, 930,000 step. **작동 확인**: 확장 직후 무너진 샘플이 5만 step 만에 회복 → [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md)
 - [x] 추론 전용 패키지 분리 — 학습 의존성 0
 - [x] CLI / Python API 추론 파이프라인
 - [x] 다중 참조(multi-reference) 입력 지원 → 코드만 완료
 - [x] 체크포인트 공개
-- [x] Post-Training : SFT → 0.8b 완료 → [SFT.md](LAB/Round1/SFT.md) 참조
-- [x] step별 샘플 관찰 기록 → [0.8b_training_review.md](LAB/Round1/0.8b_training_review.md) · [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md) 참조
+- [x] step별 샘플 관찰 기록 → [0.8b_training_review.md](LAB/Round1/0.8b_training_review.md) · [1.6b_training_review.md](LAB/Round1/1.6b_training_review.md)
+- [x] 외부 공개 모델(PRX) 비교 → [vs_prx.md](LAB/Round1/vs_prx.md)
+- [x] 학습셋 진단 — 인물 [person_coverage_probe.md](LAB/Round1/person_coverage_probe.md) · 장면 텍스트 [text_typography_probe.md](LAB/Round1/text_typography_probe.md)
 
-**진행 / 예정**
+**하다 만 것 · 못 한 것**
 
-- [ ] Post-Training : DPO 같은 알고리즘 개발 
-- [ ] depth growth 스케일업 (→ 1.6B) → 학습 진행중
-- [ ] depth growth 스케일업 (→ 3.2B) → 예정
-- [ ] Turbo 버전 모델 개발 - few-step & cfg distillation 
-- [ ] 정량 벤치마크 (GenEval / DPG-Bench 등)
-- [ ] Edit 모델 개발 → Domain-Speicific 영역에서 계획중 
-- [ ] Next (새로운 알고리즘) 모델 개발 → 코드만 완료 → 리소스 부족으로 실행 무
-- [ ] LoRA 모델 추가
+- [ ] **KD 사전학습** → ✗ 실패 확정. 39,000 step 동안 손실이 내려가지 않아 폐기
+- [ ] **SFT** → ✗ 중단. 화질 저하의 원인은 진단했으나 판정 전 종료 → [SFT.md](LAB/Round1/SFT.md)
+- [ ] **깊이 성장 (1.6B → 3B)** → ⚠ 305,000 step까지 돌렸으나 **평가 한 번 없이 종료**. 1차에서 가장 크게 투입하고 가장 적게 건진 자리
+- [ ] 정량 벤치마크 (GenEval / DPG-Bench 등) → GenEval 단 1회, 그마저 신뢰 불가
+- [ ] Post-Training : DPO 같은 알고리즘
+- [ ] Turbo 버전 (few-step & CFG distillation)
+- [ ] Edit 모델 (도메인 특화)
+- [ ] Next 계열 신규 알고리즘 → 코드만 완료, 리소스 부족으로 실행 못 함
+- [ ] LoRA 모델
+
+**1차에서 배운 것 (2라운드 계획의 근거)**
+
+- 깊이 성장은 작동한다 — 스케일업 경로 자체는 유효
+- 회화풍 편향·동작 표현 실패의 원인은 **모델이 아니라 데이터**였다 (두 체급이 같은 곡선을 그림)
+- 점진적 해상도 학습(256→512→1024)을 건너뛴 것이 가장 큰 예산 낭비
+- **학습셋 구성이 전부다** — 자세한 반성과 2라운드 방향은 [결산 문서](LAB/Round1/round1_experiment_report.md) 5·6절
 
 ## 🤗 Reference
 
