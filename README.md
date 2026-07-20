@@ -54,11 +54,12 @@
 
 ## 📰 News
 
-- 2026-07-20 — 📋 1차 실험 완료 보고 공개 — 다섯 트랙 결산과 2차 실험의 근거 ([LAB/round1_experiment_report.md](LAB/Round1/round1_experiment_report.md))
-- 2026-07-20 — ⚖️ PIERROT 10개 체크포인트 vs PRX 비교 관찰 공개 — 텍스트 렌더링 능력의 획득·흔들림 곡선 ([LAB/vs_prx.md](LAB/Round1/vs_prx.md))
+- 2026-07-20 — 🔬 인물 학습셋 커버리지 진단 공개 — 체형 공백은 남고 인종 공백은 메워졌다 ([LAB/Round1/person_coverage_probe.md](LAB/Round1/person_coverage_probe.md))
+- 2026-07-20 — 📋 1차 실험 완료 보고 공개 — 다섯 트랙 결산과 2차 실험의 근거 ([LAB/Round1/round1_experiment_report.md](LAB/Round1/round1_experiment_report.md))
+- 2026-07-20 — ⚖️ PIERROT 10개 체크포인트 vs PRX 비교 관찰 공개 — 텍스트 렌더링 능력의 획득·흔들림 곡선 ([LAB/Round1/vs_prx.md](LAB/Round1/vs_prx.md))
 - 2026-07-15 — 📚 최신 논문 리뷰: [DAR: Rethinking Cross-Layer Information Routing in Diffusion Transformers](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_DAR.md)
-- 2026-07-09 — 🖼️ step별 샘플 관찰 기록 공개 — 0.8B ([LAB/0.8b_training_review.md](LAB/Round1/0.8b_training_review.md)) · 1.6B ([LAB/1.6b_training_review.md](LAB/Round1/1.6b_training_review.md))
-- 2026-07-02 — 🧪 LAB(실험 일기) 개설 — SFT 실험·운영 노트 공개 ([LAB/SFT.md](LAB/Round1/SFT.md))
+- 2026-07-09 — 🖼️ step별 샘플 관찰 기록 공개 — 0.8B ([LAB/Round1/0.8b_training_review.md](LAB/Round1/0.8b_training_review.md)) · 1.6B ([LAB/Round1/1.6b_training_review.md](LAB/Round1/1.6b_training_review.md))
+- 2026-07-02 — 🧪 LAB(실험 일기) 개설 — SFT 실험·운영 노트 공개 ([LAB/Round1/SFT.md](LAB/Round1/SFT.md))
 - 2026-06-16 — beta-v2370:base 0.8b (v1) 추론용 체크포인트 공개 ([다운로드 ↓](#-체크포인트))
 - 2026-06-16 — PIERROT 추론 전용 패키지 공개 (코드 + 의존성 + 문서 + CC BY-NC-SA 4.0)
 
