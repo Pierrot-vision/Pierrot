@@ -45,7 +45,7 @@ As the sample grid below shows, the quality is quite decent **for a 0.8B-scale m
 ## 📰 News
 
 - 2026-07-20 — 📋 Round-1 experiment report published — five-track retrospective and rationale for round 2 ([LAB/Round1/round1_experiment_report.md](LAB/Round1/round1_experiment_report.md))
-- 2026-07-20 — 🔬 Person-dataset coverage probe — body-type gap persists, ethnicity gap is covered elsewhere ([LAB/Round1/person_coverage_probe.md](LAB/Round1/person_coverage_probe.md))
+- 2026-07-20 — 🔬 Person-dataset coverage probe — prompt format changes what the model appears capable of ([LAB/Round1/person_coverage_probe.md](LAB/Round1/person_coverage_probe.md))
 - 2026-07-20 — ⚖️ PIERROT 10 checkpoints vs PRX — tracing when text-rendering emerges and wobbles ([LAB/Round1/vs_prx.md](LAB/Round1/vs_prx.md))
 - 2026-07-15 — 📚 Latest paper review: [DAR: Rethinking Cross-Layer Information Routing in Diffusion Transformers](https://github.com/Pierrot-vision/Reading-Papers/blob/main/Diffusion/PAPER_DAR.md)
 - 2026-07-09 — 🖼️ Per-step sample observations published — 0.8B ([LAB/Round1/0.8b_training_review.md](LAB/Round1/0.8b_training_review.md)) · 1.6B ([LAB/Round1/1.6b_training_review.md](LAB/Round1/1.6b_training_review.md))
